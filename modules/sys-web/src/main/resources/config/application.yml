@@ -4,7 +4,7 @@ spring:
     host: localhost
     port: 27017
   datasource:
-    url: jdbc:mysql://localhost:3306/p2p
+    url: jdbc:mysql://localhost:3306/cms
     username: root
     password: root
   mybatis:
@@ -25,3 +25,5 @@ swagger:
     contact:
     license: Apache 2.0
     licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+
+

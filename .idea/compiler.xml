@@ -22,6 +22,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="sys-admin" />
         <module name="sys-config" />
         <module name="sys-web" />
       </profile>
@@ -29,6 +30,7 @@
     <bytecodeTargetLevel>
       <module name="frame" target="1.8" />
       <module name="modules" target="1.8" />
+      <module name="sys-admin" target="1.8" />
       <module name="sys-config" target="1.8" />
       <module name="sys-web" target="1.8" />
     </bytecodeTargetLevel>
