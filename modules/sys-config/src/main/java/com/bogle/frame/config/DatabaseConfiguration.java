@@ -70,7 +70,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public JdkRegexpMethodPointcut jdkRegexpMethodPointcut() {
         JdkRegexpMethodPointcut methodPointcut = new JdkRegexpMethodPointcut();
-        methodPointcut.setPatterns("com.fenlibao.p2p.*.service.*");
+        methodPointcut.setPatterns("com.bogle.frame.*.service.*");
         return methodPointcut;
     }
 }

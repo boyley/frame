@@ -24,7 +24,7 @@
         <setting name="logImpl" value="LOG4J"/>
     </settings>
     <!--<plugins>
-        <plugin interceptor="com.fenlibao.p2p.config.plugin.PageInterInterceptor">
+        <plugin interceptor="com.bogle.frame.config.plugin.PageInterInterceptor">
             <property name="id" value=".+Page$"/>
         </plugin>
     </plugins>-->
