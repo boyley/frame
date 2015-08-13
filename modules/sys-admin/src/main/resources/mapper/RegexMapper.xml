@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.admin.persistence.RegexMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.admin.domain.Regex" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="regex" property="regex" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="AssociationResultMap" type="com.bogle.frame.admin.domain.Regex" extends="BaseResultMap">
+    <collection property="roles" javaType="list" ofType="com.bogle.frame.admin.domain.Role" columnPrefix="role_"
+                resultMap="com.bogle.frame.admin.persistence.RoleMapper.BaseResultMap"/>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, name, regex
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_regex
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="findAll" resultMap="AssociationResultMap">
+    SELECT
+      regex.id,
+      regex.name,
+      regex.regex,
+      role.id role_id,
+      role.name role_name,
+      role.authority role_authority
+    FROM sys_regex regex
+    JOIN sys_regex_role regex_role ON (regex_role.regex_id = regex.id)
+    JOIN sys_role role ON(role.id = regex_role.role_id)
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_regex
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.admin.domain.Regex" >
+    insert into sys_regex (id, name, regex
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{regex,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.admin.domain.Regex" >
+    insert into sys_regex
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="regex != null" >
+        regex,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="regex != null" >
+        #{regex,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.admin.domain.Regex" >
+    update sys_regex
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="regex != null" >
+        regex = #{regex,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.admin.domain.Regex" >
+    update sys_regex
+    set name = #{name,jdbcType=VARCHAR},
+      regex = #{regex,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

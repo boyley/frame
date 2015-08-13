@@ -6,6 +6,8 @@
     <file url="file://$PROJECT_DIR$/modules/sys-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/sys-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/sys-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/standard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/standard/cms" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

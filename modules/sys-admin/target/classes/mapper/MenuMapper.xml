@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.admin.persistence.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.admin.domain.Menu">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="parent_id" property="parentId" jdbcType="BIGINT"/>
+        <result column="resc_id" property="rescId" jdbcType="BIGINT"/>
+        <result column="icon" property="icon" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="AssociationResultMap" type="com.bogle.frame.admin.domain.Menu" extends="BaseResultMap">
+        <association property="resc" column="resc_id" javaType="com.bogle.frame.admin.domain.Resc" columnPrefix="resc" resultMap="com.bogle.frame.admin.persistence.RescMapper.BaseResultMap"/>
+        <association property="parentMenu" column="parent_id" javaType="com.bogle.frame.admin.domain.Menu" select="selectByParent"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, name, parent_id, resc_id,icon
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_menu
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByRescs" resultMap="AssociationResultMap" parameterType="java.util.List">
+        SELECT
+        menu.id,
+        menu.name,
+        menu.parent_id,
+        menu.resc_id,
+        menu.icon,
+        resc.id rescid,
+        resc.url rescurl,
+        resc.res_type resres_type
+        FROM
+        sys_menu menu
+        JOIN sys_resc resc ON (resc.id = menu.resc_id)
+        where  resc_id IN (<foreach collection="list" item="item" index="index" separator="," >#{item.id,jdbcType=BIGINT}</foreach>)
+    </select>
+
+    <select id="selectByParent" resultMap="AssociationResultMap" parameterType="java.lang.Long">
+        SELECT
+        menu.id,
+        menu.name,
+        menu.parent_id,
+        menu.resc_id,
+        menu.icon
+        FROM
+            sys_menu menu
+        WHERE menu.id = #{0}
+
+
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_menu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.bogle.frame.admin.domain.Menu">
+    insert into sys_menu (id, name, parent_id, 
+      resc_id)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, 
+      #{rescId,jdbcType=BIGINT})
+  </insert>
+    <insert id="insertSelective" parameterType="com.bogle.frame.admin.domain.Menu">
+        insert into sys_menu
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="rescId != null">
+                resc_id,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                #{parentId,jdbcType=BIGINT},
+            </if>
+            <if test="rescId != null">
+                #{rescId,jdbcType=BIGINT},
+            </if>
+            <if test="icon != null">
+                #{icon,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+</mapper>

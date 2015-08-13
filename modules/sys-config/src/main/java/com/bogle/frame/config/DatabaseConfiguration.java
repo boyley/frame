@@ -5,6 +5,7 @@ import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
 import com.codahale.metrics.MetricRegistry;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,7 +30,8 @@ import javax.sql.DataSource;
  * Created by Administrator on 2015/8/12.
  */
 @Configuration
-@EnableTransactionManagement
+@EnableTransactionManagement(proxyTargetClass = true)
+@MapperScan("com.bogle.frame.*.persistence")
 public class DatabaseConfiguration implements EnvironmentAware {
 
     private Environment env;
