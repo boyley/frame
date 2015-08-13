@@ -46,6 +46,7 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
         registry.addViewController("/").setViewName("index");
+        registry.addViewController("/tpl/main/main.html").setViewName("tpl/main/main");
     }
 
     @Override
@@ -106,8 +107,8 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
         FilterRegistration.Dynamic staticResourcesProductionFilter =
                 servletContext.addFilter("staticResourcesProductionFilter",
                         new StaticResourcesProductionFilter());
-        staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/");
-        staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/index.html");
+//        staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/");
+//        staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/index.html");
         staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/assets/*");
         staticResourcesProductionFilter.addMappingForUrlPatterns(disps, true, "/scripts/*");
         staticResourcesProductionFilter.setAsyncSupported(true);

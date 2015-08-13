@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    initialSize: 0
+    maxActive: 20
+    minIdle: 0
+    maxWait: 60000
+    validationQuery: SELECT 1
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 25200000
+    removeAbandoned: true
+    removeAbandonedTimeout: 1800
+    logAbandoned: true
+    filters: stat
+
