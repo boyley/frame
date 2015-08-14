@@ -644,7 +644,7 @@
       <workItem from="1439360357481" duration="6171000" />
       <workItem from="1439366559679" duration="8902000" />
       <workItem from="1439428283390" duration="23826000" />
-      <workItem from="1439517323515" duration="29703000" />
+      <workItem from="1439517323515" duration="29730000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -724,11 +724,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439548848878</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="侧边栏,顶板显示隐藏菜单完成">
+      <created>1439548872480</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1439548872480</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68602000" />
+    <option name="totallyTimeSpent" value="68629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
