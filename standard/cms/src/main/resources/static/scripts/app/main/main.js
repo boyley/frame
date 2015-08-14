@@ -10,7 +10,7 @@ angular.module('app')
                     roles: []
                 },
                 views: {
-                    'app@': {
+                    'content': {
                         templateUrl: 'tpl/main/main.html'
                     }
                 },

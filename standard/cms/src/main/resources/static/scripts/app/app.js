@@ -20,7 +20,7 @@ angular.module('app', [
     'oc.lazyLoad',
     'pascalprecht.translate'
 ])
-    .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
+    .run(function ($rootScope, $location, $window, $http, $state, $translate,$stateParams, Language, Auth, Principal, ENV, VERSION) {
         $rootScope.ENV = ENV;
         $rootScope.VERSION = VERSION;
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
@@ -36,6 +36,8 @@ angular.module('app', [
                 $translate.use(language);
             });
 
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
         });
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
@@ -77,11 +79,11 @@ angular.module('app', [
         $urlRouterProvider.otherwise('/');
         $stateProvider.state('app', {
             'abstract': true,
-            //views: {
-            //    'app': {
-            //        templateUrl: 'tpl/app.html'
-            //    }
-            //},
+            views: {
+                'app': {
+                    templateUrl: 'tpl/app.html'
+                }
+            },
             resolve: {
                 authorize: ['Auth',
                     function (Auth) {

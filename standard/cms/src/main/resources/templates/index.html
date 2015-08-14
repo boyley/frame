@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/font.css" type="text/css" />
     <link rel="stylesheet" href="css/app.css" type="text/css" />
 </head>
-<body>
+<body ng-controller="AppCtrl">
 <div class="app" id="app"
      ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
      ui-view="app"></div>
@@ -65,10 +65,16 @@
 
 <!--首页-->
 <script src="scripts/app/app.js"></script>
+<script src="scripts/app/main.js"></script>
+<script src="scripts/app/config.js"></script>
+<!--登陆-->
 <script src="scripts/app/login/login.js"></script>
+<!--注册-->
 <script src="scripts/app/register/register.js"></script>
+<!--找回密码-->
 <script src="scripts/app/forgotpwd/forgotpwd.js"></script>
-<!--<script src="scripts/app/main/main.js"></script>-->
+
+<script src="scripts/app/main/main.js"></script>
 <script src="scripts/app/app.constants.js"></script>
 <script src="scripts/app/config.lazyload.js"></script>
 
