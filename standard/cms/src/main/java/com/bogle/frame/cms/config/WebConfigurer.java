@@ -51,10 +51,11 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
         registry.addViewController("/tpl/main/main.html").setViewName("tpl/main/main");
         registry.addViewController("/tpl/app.html").setViewName("tpl/app");
         registry.addViewController("/tpl/blocks/header.html").setViewName("tpl/blocks/header");
-        registry.addViewController("/tpl/blocks/nav.html").setViewName("tpl/blocks/nav");
+
 
         /**导航*/
         registry.addViewController("/tpl/aside/aside.html").setViewName("tpl/aside/aside");
+        registry.addViewController("/tpl/aside/nav.html").setViewName("tpl/aside/nav");
 
         registry.addViewController("/tpl/blocks/settings.html").setViewName("tpl/blocks/settings");
 

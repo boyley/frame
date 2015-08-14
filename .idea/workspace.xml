@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js" />
-      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\blocks\aside.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" afterPath="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/nav.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\blocks\nav.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" />
     </list>
     <ignored path="frame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +34,48 @@
     <favorites_list name="frame" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33293557">
+              <caret line="122" column="16" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="16" />
+              <folding>
+                <element signature="n#li#0;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#4;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#6;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#li#7;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#0;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#4;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#5;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#6;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#7;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#8;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#9;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#10;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+                <element signature="n#li#12;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aside.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.2413793">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,8 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modules/sys-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/modules/sys-admin/src/main/java/com/bogle/frame/admin/service/impl/UserDetailsService.java" />
         <option value="$PROJECT_DIR$/modules/sys-config/src/main/java/com/bogle/frame/config/DatabaseConfiguration.java" />
         <option value="$PROJECT_DIR$/standard/pom.xml" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/signin.html" />
@@ -117,9 +149,11 @@
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/aside.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/config.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.js" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
       </list>
     </option>
   </component>
@@ -429,10 +463,6 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -457,128 +487,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -955,7 +863,7 @@
       <workItem from="1439360357481" duration="6171000" />
       <workItem from="1439366559679" duration="8902000" />
       <workItem from="1439428283390" duration="23826000" />
-      <workItem from="1439517323515" duration="21773000" />
+      <workItem from="1439517323515" duration="22983000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1005,11 +913,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439537974673</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="angularJS 登陆，注册，找回密码，底部版权">
+      <created>1439540929444</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1439540929444</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60672000" />
+    <option name="totallyTimeSpent" value="61882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1021,7 +935,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18976545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18976545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4745946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1034,13 +948,40 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3264865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18976545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4745946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26378378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1432,35 +1373,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/nav.html">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2040573">
-          <caret line="429" column="5" selection-start-line="429" selection-start-column="5" selection-end-line="429" selection-end-column="5" />
-          <folding>
-            <element signature="n#li#0;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#1;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#2;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#6;n#ul#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.98847926">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.16843972">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="46" />
-          <folding>
-            <element signature="docComment;method#initCachingHttpHeadersFilter#0;class#WebConfigurer#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1472,19 +1397,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.704947">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#initCachingHttpHeadersFilter#0;class#WebConfigurer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2413793">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16843972">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.33293557">
+          <caret line="122" column="16" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="16" />
+          <folding>
+            <element signature="n#li#0;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#4;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#6;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#7;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#0;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#4;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#5;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#6;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#7;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#8;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#9;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#10;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+            <element signature="n#li#12;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
