@@ -5,7 +5,7 @@ angular.module('app')
         $stateProvider
             .state('forgotpwd', {
                 parent: 'access',
-                url: '/',
+                url: '/forgotpwd',
                 data: {
                     roles: []
                 },
