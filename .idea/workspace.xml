@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/setnganimate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-butterbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-focus.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-fullscreen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-jq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-nav.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-shift.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-toggleclass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/aside/aside.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/aside.json" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\activate.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\audits.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\bankAccount.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\configuration.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\error.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\global.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\health.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\label.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\language.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\login.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\logs.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\main.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\metrics.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\operation.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\password.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\register.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\reset.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\sessions.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\i18n\zh\settings.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="frame.iws" />
@@ -43,62 +56,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.2413793">
-              <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-              <folding>
-                <element signature="n#li#0;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#2;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#3;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#4;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#6;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#li#7;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#2;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#3;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#4;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#5;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#6;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#7;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#8;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#9;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#10;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-                <element signature="n#li#12;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="aside.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.862069">
-              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state vertical-scroll-proportion="4.071429">
+              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-jq.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-jq.js">
+      <file leaf-file-name="aside.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/aside/aside.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6551724">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aside.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/aside.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.106343284">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6042403">
-              <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+            <state vertical-scroll-proportion="-26.25">
+              <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="52" selection-start-line="18" selection-start-column="24" selection-end-line="19" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -132,8 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modules/sys-config/src/main/java/com/bogle/frame/config/DatabaseConfiguration.java" />
-        <option value="$PROJECT_DIR$/standard/pom.xml" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/signin.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.constants.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/bankAccount.json" />
@@ -180,9 +190,11 @@
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/aside/aside.controller.js" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/aside.json" />
       </list>
     </option>
   </component>
@@ -447,61 +459,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
+              <option name="myItemId" value="aside" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,6 +540,174 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aside" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="i18n" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="i18n" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -626,11 +760,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\aside" />
       <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\components" />
       <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app" />
       <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\forgotpwd" />
       <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl" />
-      <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\footer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\aside" />
@@ -976,7 +1110,7 @@
       <workItem from="1439360357481" duration="6171000" />
       <workItem from="1439366559679" duration="8902000" />
       <workItem from="1439428283390" duration="23826000" />
-      <workItem from="1439517323515" duration="23395000" />
+      <workItem from="1439517323515" duration="24956000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1038,11 +1172,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439542143590</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="左侧导航配置完成，">
+      <created>1439542574622</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1439542574622</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62294000" />
+    <option name="totallyTimeSpent" value="63855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1059,7 +1199,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4745946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26378378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1067,7 +1207,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3264865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3264865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1109,7 +1249,8 @@
     <MESSAGE value="模板框架" />
     <MESSAGE value="模板框架,angularjs auth 导入完成，下一步搭建授权" />
     <MESSAGE value="angularJS 登陆，注册，找回密码，底部版权" />
-    <option name="LAST_COMMIT_MESSAGE" value="angularJS 登陆，注册，找回密码，底部版权" />
+    <MESSAGE value="左侧导航配置完成，" />
+    <option name="LAST_COMMIT_MESSAGE" value="左侧导航配置完成，" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1129,13 +1270,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/auth/principal.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.533333">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/auth/services/account.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.084821425">
@@ -1252,14 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/zh/activate.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/bower_components/angular-ui-grid/ui-grid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -1320,14 +1446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/zh/language.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1460,14 +1578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2544643">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1480,14 +1590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16843972">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1510,43 +1612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2413793">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-          <folding>
-            <element signature="n#li#0;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#1;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#2;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#4;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#6;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#li#7;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#0;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#2;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#4;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#5;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#6;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#7;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#8;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#9;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#10;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-            <element signature="n#li#12;n#ul#0;n#li#8;n#ul#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.862069">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/directives/ui-jq.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1555,10 +1620,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="52" selection-start-line="18" selection-start-column="24" selection-end-line="19" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6042403">
-          <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+        <state vertical-scroll-proportion="-26.25">
+          <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/aside.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.071429">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/aside/aside.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/aside/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6551724">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/aside.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.106343284">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <folding />
         </state>
       </provider>
