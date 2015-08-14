@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="frame.iws" />
@@ -32,7 +34,48 @@
     <favorites_list name="frame" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="forgotpwd.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35023043">
+              <caret line="16" column="96" selection-start-line="16" selection-start-column="96" selection-end-line="16" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forgotpwd.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.678572">
+              <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -97,20 +140,20 @@
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/bower_components/messageformat/messageformat.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main/main.js" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/app.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/register/login.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/register/register.js" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/footer/footer.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/login.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/login/login.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html" />
         <option value="$PROJECT_DIR$/modules/sys-web/src/main/java/com/bogle/frame/web/config/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.js" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html" />
       </list>
     </option>
   </component>
@@ -383,7 +426,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forgotpwd" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1005,7 +1090,7 @@
       <workItem from="1439360357481" duration="6171000" />
       <workItem from="1439366559679" duration="8902000" />
       <workItem from="1439428283390" duration="23826000" />
-      <workItem from="1439517323515" duration="18628000" />
+      <workItem from="1439517323515" duration="18884000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1043,11 +1128,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439537429707</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="angularJS 登陆，注册，找回密码，底部版权">
+      <created>1439537715931</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1439537715931</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57527000" />
+    <option name="totallyTimeSpent" value="57783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1059,7 +1150,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24520256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18976545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4745946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1430,22 +1521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27566963">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.714285">
-          <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/footer/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.031879194">
@@ -1466,14 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.107143">
           <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22160149">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1504,10 +1571,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/forgotpwd/forgotpwd.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16964285">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.678572">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd/forgotpwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35023043">
+          <caret line="16" column="96" selection-start-line="16" selection-start-column="96" selection-end-line="16" selection-end-column="96" />
           <folding />
         </state>
       </provider>

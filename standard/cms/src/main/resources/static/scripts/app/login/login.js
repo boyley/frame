@@ -5,7 +5,7 @@ angular.module('app')
         $stateProvider
             .state('login', {
                 parent: 'access',
-                url: '/',
+                url: '/login',
                 data: {
                     roles: []
                 },
