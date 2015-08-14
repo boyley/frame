@@ -1,5 +1,7 @@
-package com.bogle.frame.web.config;
+package com.bogle.frame.cms.config;
 
+import com.bogle.frame.web.config.CacheConfiguration;
+import com.bogle.frame.web.config.Constants;
 import com.bogle.frame.web.filter.CachingHttpHeadersFilter;
 import com.bogle.frame.web.filter.StaticResourcesProductionFilter;
 import com.bogle.frame.web.filter.gzip.GZipServletFilter;
