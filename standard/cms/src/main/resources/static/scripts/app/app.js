@@ -75,14 +75,13 @@ angular.module('app', [
         httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
 
         $urlRouterProvider.otherwise('/');
-        $stateProvider.state('site', {
+        $stateProvider.state('app', {
             'abstract': true,
-            views: {
-                'navbar@': {
-                    templateUrl: 'scripts/components/navbar/navbar.html',
-                    controller: 'NavbarController'
-                }
-            },
+            //views: {
+            //    'app': {
+            //        templateUrl: 'tpl/app.html'
+            //    }
+            //},
             resolve: {
                 authorize: ['Auth',
                     function (Auth) {
@@ -92,6 +91,12 @@ angular.module('app', [
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('global');
                 }]
+            }
+        }).state('access', {
+            views: {
+                'app': {
+                    template: '<div ui-view class="fade-in-right-big smooth"></div>'
+                }
             }
         });
 

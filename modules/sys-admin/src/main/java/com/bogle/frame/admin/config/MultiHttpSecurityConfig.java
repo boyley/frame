@@ -53,7 +53,7 @@ public class MultiHttpSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void init(WebSecurity web) throws Exception {
-        web.debug(true);
+//        web.debug(true);
         super.init(web);
 
     }
@@ -130,7 +130,7 @@ public class MultiHttpSecurityConfig extends WebSecurityConfigurerAdapter {
                 .frameOptions()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/**").authenticated();
+                .antMatchers("/api/**").authenticated();
     }
 
 

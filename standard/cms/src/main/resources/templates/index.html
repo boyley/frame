@@ -6,26 +6,18 @@
     <title></title>
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width"/>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css assets/styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css assets/styles/main.css -->
-    <link rel="stylesheet" href="assets/styles/main.css"/>
-    <!-- endbuild -->
 
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
-    <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
-    <link rel="stylesheet" href="css/font.css" type="text/css"/>
-    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
 </head>
 <body>
 <div class="app" id="app"
      ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
-     ui-view=""></div>
+     ui-view="app"></div>
 
 
 
@@ -61,6 +53,8 @@
 
 <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
 
+
+<script src="bower_components/angular-i18n/angular-locale_zh.js"></script>
 <script src="bower_components/messageformat/messageformat.js"></script>
 <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
 <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
@@ -71,7 +65,10 @@
 
 <!--首页-->
 <script src="scripts/app/app.js"></script>
-<script src="scripts/app/main/main.js"></script>
+<script src="scripts/app/login/login.js"></script>
+<script src="scripts/app/register/register.js"></script>
+<script src="scripts/app/forgotpwd/forgotpwd.js"></script>
+<!--<script src="scripts/app/main/main.js"></script>-->
 <script src="scripts/app/app.constants.js"></script>
 <script src="scripts/app/config.lazyload.js"></script>
 
