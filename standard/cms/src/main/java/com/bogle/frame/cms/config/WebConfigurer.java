@@ -48,7 +48,7 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
         registry.addViewController("/").setViewName("index");
-        registry.addViewController("/tpl/main.html").setViewName("tpl/main");
+        registry.addViewController("/tpl/home.html").setViewName("tpl/home");
         registry.addViewController("/tpl/app.html").setViewName("tpl/app");
         registry.addViewController("/tpl/blocks/header.html").setViewName("tpl/blocks/header");
 

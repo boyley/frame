@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" afterPath="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\aside\aside.controller.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/controllers/aside.controller.js" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\forgotpwd\forgotpwd.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/forgotpwd.router.js" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\login\login.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/login.router.js" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\main\main.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/main.router.js" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\register\register.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/register.router.js" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\aside\aside.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/aside.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\aside\nav.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/nav.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\footer\footer.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/footer.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\forgotpwd\forgotpwd.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\login\login.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/login.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\main\main.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/main.html" />
-      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\register\register.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/register.html" />
+      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\static\scripts\app\router\main.router.js" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/home.router.js" />
+      <change type="MOVED" beforePath="E:\workspace\project\idea\frame\standard\cms\src\main\resources\templates\tpl\main.html" afterPath="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/home.html" />
     </list>
     <ignored path="frame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,14 +36,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.321428">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="WebConfigurer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="47" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="47" />
+              <caret line="50" column="74" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
               <folding>
                 <element signature="docComment;method#initCachingHttpHeadersFilter#0;class#WebConfigurer#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/home.router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="46" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6487395">
+              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,46 +93,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-12.892858">
               <caret line="19" column="60" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgotpwd.router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/forgotpwd.router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/login.router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/main.router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.router.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/register.router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27566963">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -137,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/fr/label.json" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/fr/operation.json" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/admin/audits.service.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/admin/configuration.service.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/components/admin/logs.service.js" />
@@ -179,15 +166,17 @@
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/i18n/en/aside.json" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/config.lazyload.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/header.html" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/aside.html" />
-        <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/login.html" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/forgotpwd.router.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/login.router.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/main.router.js" />
         <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/register.router.js" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/home.html" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/home.router.js" />
+        <option value="$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -984,7 +973,7 @@
       <workItem from="1439366559679" duration="8902000" />
       <workItem from="1439428283390" duration="23826000" />
       <workItem from="1439517323515" duration="29851000" />
-      <workItem from="1439773772619" duration="2336000" />
+      <workItem from="1439773772619" duration="2633000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1076,11 +1065,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439548899456</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="侧边栏,顶板显示隐藏菜单完成">
+      <created>1439776622744</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1439776622744</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71086000" />
+    <option name="totallyTimeSpent" value="71383000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1105,7 +1100,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29513514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29513514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1438,14 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021205356">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/blocks/nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4297235">
@@ -1470,22 +1457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.189655">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.781106">
-          <caret line="111" column="36" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/forgotpwd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35023043">
@@ -1498,32 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.678572">
           <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="47" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="47" />
-          <folding>
-            <element signature="docComment;method#initCachingHttpHeadersFilter#0;class#WebConfigurer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.892858">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -1544,7 +1489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/main.router.js">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/register.router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
@@ -1552,10 +1497,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/register.router.js">
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27566963">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        <state vertical-scroll-proportion="-0.6328125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="19" column="60" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.321428">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/java/com/bogle/frame/cms/config/WebConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="74" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
+          <folding>
+            <element signature="docComment;method#initCachingHttpHeadersFilter#0;class#WebConfigurer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/tpl/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/static/scripts/app/router/home.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standard/cms/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6487395">
+          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
           <folding />
         </state>
       </provider>
