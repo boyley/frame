@@ -2,52 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/defines/ActionName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/test/java/com/bogle/frame/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/component/Http.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/com/bogle/frame/common/HttpClientUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/service/IWexinApiUrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/service/IWxApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/message/req/ReqTicket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/domain/Ticket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/message/Ticket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/persistence/TicketMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/resources/mapper/TicketMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/defines/TicketType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/domain/Token.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/message/Token.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/persistence/TokenMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/resources/mapper/TokenMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/defines/TokenType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/config/WeixinConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/exception/WeixinException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/message/req/White.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/service/impl/WxApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/test/java/com/bogle/frame/service/WxApiTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/defines/WxCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/main/java/com/bogle/frame/weixin/message/WxMsg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/test/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/common.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/src/test/resources/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/weixin/weixin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/cms.iml" afterPath="$PROJECT_DIR$/standard/cms/cms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frame.iml" afterPath="$PROJECT_DIR$/frame.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/modules.iml" afterPath="$PROJECT_DIR$/modules/modules.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pom.xml" afterPath="$PROJECT_DIR$/modules/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/standard.iml" afterPath="$PROJECT_DIR$/standard/standard.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-admin/sys-admin.iml" afterPath="$PROJECT_DIR$/modules/sys-admin/sys-admin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-config/sys-config.iml" afterPath="$PROJECT_DIR$/modules/sys-config/sys-config.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-web/sys-web.iml" afterPath="$PROJECT_DIR$/modules/sys-web/sys-web.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="frame.iws" />
@@ -1070,7 +1024,7 @@
       <workItem from="1439428283390" duration="23826000" />
       <workItem from="1439517323515" duration="29851000" />
       <workItem from="1439773772619" duration="4066000" />
-      <workItem from="1439797116295" duration="10670000" />
+      <workItem from="1439797116295" duration="10707000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1180,11 +1134,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439778434096</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="微信">
+      <created>1439807810979</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1439807810979</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83486000" />
+    <option name="totallyTimeSpent" value="83523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1254,7 +1214,8 @@
     <MESSAGE value="左侧导航配置完成，" />
     <MESSAGE value="侧边栏导航初步完成国际化" />
     <MESSAGE value="侧边栏,顶板显示隐藏菜单完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="侧边栏,顶板显示隐藏菜单完成" />
+    <MESSAGE value="微信" />
+    <option name="LAST_COMMIT_MESSAGE" value="微信" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
