@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.weixin.persistence.TicketMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Ticket">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="log_id" property="logId" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="ticket" property="ticket" jdbcType="VARCHAR"/>
+        <result column="expire_seconds" property="expireSeconds" jdbcType="BIGINT"/>
+        <result column="expires_in" property="expiresIn" jdbcType="BIGINT"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+        <result column="card_id" property="cardId" jdbcType="VARCHAR"/>
+        <result column="openid" property="openid" jdbcType="VARCHAR"/>
+        <result column="unique_code" property="uniqueCode" jdbcType="BIT"/>
+        <result column="outer_id" property="outerId" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, log_id, create_time, ticket, expire_seconds, expires_in, url, type, code, card_id,
+    openid, unique_code, outer_id
+  </sql>
+
+    <select id="selectLastTicket" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from weixin_ticket
+        where id = (SELECT MAX(id) FROM weixin_ticket where type= #{0})
+    </select>
+
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Ticket" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into weixin_ticket
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="logId != null">
+                log_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="ticket != null">
+                ticket,
+            </if>
+            <if test="expireSeconds != null">
+                expire_seconds,
+            </if>
+            <if test="expiresIn != null">
+                expires_in,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="cardId != null">
+                card_id,
+            </if>
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="uniqueCode != null">
+                unique_code,
+            </if>
+            <if test="outerId != null">
+                outer_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="logId != null">
+                #{logId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="ticket != null">
+                #{ticket,jdbcType=VARCHAR},
+            </if>
+            <if test="expireSeconds != null">
+                #{expireSeconds,jdbcType=BIGINT},
+            </if>
+            <if test="expiresIn != null">
+                #{expiresIn,jdbcType=BIGINT},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="cardId != null">
+                #{cardId,jdbcType=VARCHAR},
+            </if>
+            <if test="openid != null">
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="uniqueCode != null">
+                #{uniqueCode,jdbcType=BIT},
+            </if>
+            <if test="outerId != null">
+                #{outerId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+</mapper>

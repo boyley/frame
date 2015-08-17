@@ -23,19 +23,23 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="cms" />
+        <module name="common" />
         <module name="sys-admin" />
         <module name="sys-config" />
         <module name="sys-web" />
+        <module name="weixin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cms" target="1.8" />
+      <module name="common" target="1.8" />
       <module name="frame" target="1.8" />
       <module name="modules" target="1.8" />
       <module name="standard" target="1.8" />
       <module name="sys-admin" target="1.8" />
       <module name="sys-config" target="1.8" />
       <module name="sys-web" target="1.8" />
+      <module name="weixin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,6 +9,7 @@
     <modules>
         <module>modules</module>
         <module>standard</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -118,6 +119,11 @@
             <artifactId>commons-io</artifactId>
             <version>2.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4.1</version>
+        </dependency>
 
         <!-- jpa -->
         <dependency>
@@ -139,6 +145,16 @@
             <version>5.2.1.Final</version>
         </dependency>
 
+        <!--cglib-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+
+
+        <!--java servlet-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

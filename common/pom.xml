@@ -7,27 +7,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>modules</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>common</artifactId>
+    <packaging>jar</packaging>
 
-    <name>modules</name>
+    <name>common</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>sys-web</module>
-        <module>sys-config</module>
-        <module>sys-admin</module>
-        <module>weixin</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <scope>provided</scope>
-        </dependency>
+
     </dependencies>
 </project>
