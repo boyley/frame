@@ -67,6 +67,8 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
         registry.addViewController("/tpl/blocks/footer.html").setViewName("tpl/blocks/footer");
         /**找回密码*/
         registry.addViewController("/tpl/forgotpwd.html").setViewName("tpl/forgotpwd");
+        /**菜单*/
+        registry.addViewController("/tpl/menu.html").setViewName("tpl/menu");
     }
 
     @Override

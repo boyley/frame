@@ -15,9 +15,9 @@
   },
   "aside" : {
     "nav" : {
-      "HEADER" : "Navigation",
+      "HEADER" : "导航",
       "DASHBOARD" : "Dashboard",
-      "CALENDAR" : "Calendar",
+      "CALENDAR" : "菜单",
       "EMAIL" : "Email",
       "WIDGETS" : "Widgets",
       "components" : {
