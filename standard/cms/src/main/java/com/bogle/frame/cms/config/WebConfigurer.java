@@ -48,25 +48,25 @@ public class WebConfigurer extends WebMvcConfigurerAdapter implements ServletCon
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
         registry.addViewController("/").setViewName("index");
-        registry.addViewController("/tpl/main/main.html").setViewName("tpl/main/main");
+        registry.addViewController("/tpl/main.html").setViewName("tpl/main");
         registry.addViewController("/tpl/app.html").setViewName("tpl/app");
         registry.addViewController("/tpl/blocks/header.html").setViewName("tpl/blocks/header");
 
 
-        /**导航*/
-        registry.addViewController("/tpl/aside/aside.html").setViewName("tpl/aside/aside");
-        registry.addViewController("/tpl/aside/nav.html").setViewName("tpl/aside/nav");
+        /**侧边栏*/
+        registry.addViewController("/tpl/blocks/aside.html").setViewName("tpl/blocks/aside");
+        registry.addViewController("/tpl/blocks/nav.html").setViewName("tpl/blocks/nav");
 
         registry.addViewController("/tpl/blocks/settings.html").setViewName("tpl/blocks/settings");
 
         /**登陆*/
-        registry.addViewController("/tpl/login/login.html").setViewName("tpl/login/login");
+        registry.addViewController("/tpl/login.html").setViewName("tpl/login");
         /**注册*/
-        registry.addViewController("/tpl/register/register.html").setViewName("tpl/register/register");
+        registry.addViewController("/tpl/register.html").setViewName("tpl/register");
         /**底部*/
-        registry.addViewController("/tpl/footer/footer.html").setViewName("tpl/footer/footer");
+        registry.addViewController("/tpl/blocks/footer.html").setViewName("tpl/blocks/footer");
         /**找回密码*/
-        registry.addViewController("/tpl/forgotpwd/forgotpwd.html").setViewName("tpl/forgotpwd/forgotpwd");
+        registry.addViewController("/tpl/forgotpwd.html").setViewName("tpl/forgotpwd");
     }
 
     @Override

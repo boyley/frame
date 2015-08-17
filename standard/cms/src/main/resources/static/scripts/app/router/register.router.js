@@ -3,15 +3,15 @@
 angular.module('app')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('login', {
+            .state('register', {
                 parent: 'access',
-                url: '/login',
+                url: '/register',
                 data: {
                     roles: []
                 },
                 views: {
                     '': {
-                        templateUrl: 'tpl/login/login.html'
+                        templateUrl: 'tpl/register.html'
                     }
                 },
                 resolve: {

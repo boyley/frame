@@ -11,7 +11,7 @@ angular.module('app')
                 },
                 views: {
                     'content': {
-                        templateUrl: 'tpl/main/main.html'
+                        templateUrl: 'tpl/main.html'
                     }
                 },
                 resolve: {

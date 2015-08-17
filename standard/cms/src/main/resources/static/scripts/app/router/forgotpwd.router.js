@@ -11,7 +11,7 @@ angular.module('app')
                 },
                 views: {
                     '': {
-                        templateUrl: 'tpl/forgotpwd/forgotpwd.html'
+                        templateUrl: 'tpl/forgotpwd.html'
                     }
                 },
                 resolve: {
