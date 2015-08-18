@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.weixin.persistence.FansMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Fans">
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="subscribe" property="subscribe" jdbcType="INTEGER" />
+        <result column="openid" property="openid" jdbcType="VARCHAR" />
+        <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+        <result column="city" property="city" jdbcType="VARCHAR" />
+        <result column="country" property="country" jdbcType="VARCHAR" />
+        <result column="province" property="province" jdbcType="VARCHAR" />
+        <result column="language" property="language" jdbcType="VARCHAR" />
+        <result column="headimgurl" property="headimgurl" jdbcType="VARCHAR" />
+        <result column="subscribe_time" property="subscribeTime" jdbcType="TIMESTAMP" />
+        <result column="unionid" property="unionid" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="groupid" property="groupid" jdbcType="INTEGER" />
+        <result column="privilege" property="privilege" jdbcType="VARCHAR" />
+        <result column="errcode" property="errcode" jdbcType="INTEGER" />
+        <result column="errmsg" property="errmsg" jdbcType="VARCHAR" />
+        <result column="token_id" property="tokenId" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, subscribe, openid, nickname, sex, city, country, province, language, headimgurl, 
+    subscribe_time, unionid, remark, groupid, privilege, errcode, errmsg
+  </sql>
+
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Fans">
+        insert into weixin_fans
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="subscribe != null" >
+                subscribe,
+            </if>
+            <if test="openid != null" >
+                openid,
+            </if>
+            <if test="nickname != null" >
+                nickname,
+            </if>
+            <if test="sex != null" >
+                sex,
+            </if>
+            <if test="city != null" >
+                city,
+            </if>
+            <if test="country != null" >
+                country,
+            </if>
+            <if test="province != null" >
+                province,
+            </if>
+            <if test="language != null" >
+                language,
+            </if>
+            <if test="headimgurl != null" >
+                headimgurl,
+            </if>
+            <if test="subscribeTime != null" >
+                subscribe_time,
+            </if>
+            <if test="unionid != null" >
+                unionid,
+            </if>
+            <if test="remark != null" >
+                remark,
+            </if>
+            <if test="groupid != null" >
+                groupid,
+            </if>
+            <if test="privilege != null" >
+                privilege,
+            </if>
+            <if test="errcode != null" >
+                errcode,
+            </if>
+            <if test="errmsg != null" >
+                errmsg,
+            </if>
+            <if test="tokenId != null" >
+                token_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="subscribe != null" >
+                #{subscribe,jdbcType=INTEGER},
+            </if>
+            <if test="openid != null" >
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null" >
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="city != null" >
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="country != null" >
+                #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null" >
+                #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="headimgurl != null" >
+                #{headimgurl,jdbcType=VARCHAR},
+            </if>
+            <if test="subscribeTime != null" >
+                #{subscribeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="unionid != null" >
+                #{unionid,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="groupid != null" >
+                #{groupid,jdbcType=INTEGER},
+            </if>
+            <if test="privilege != null" >
+                #{privilege,jdbcType=VARCHAR},
+            </if>
+            <if test="errcode != null" >
+                #{errcode,jdbcType=INTEGER},
+            </if>
+            <if test="errmsg != null" >
+                #{errmsg,jdbcType=VARCHAR},
+            </if>
+            <if test="tokenId != null" >
+                #{tokenId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.Fans">
+        update weixin_fans
+        <set >
+            <if test="subscribe != null" >
+                subscribe = #{subscribe,jdbcType=INTEGER},
+            </if>
+            <if test="openid != null" >
+                openid = #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null" >
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                sex = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="city != null" >
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="country != null" >
+                country = #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null" >
+                language = #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="headimgurl != null" >
+                headimgurl = #{headimgurl,jdbcType=VARCHAR},
+            </if>
+            <if test="subscribeTime != null" >
+                subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="unionid != null" >
+                unionid = #{unionid,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="groupid != null" >
+                groupid = #{groupid,jdbcType=INTEGER},
+            </if>
+            <if test="privilege != null" >
+                privilege = #{privilege,jdbcType=VARCHAR},
+            </if>
+            <if test="errcode != null" >
+                errcode = #{errcode,jdbcType=INTEGER},
+            </if>
+            <if test="errmsg != null" >
+                errmsg = #{errmsg,jdbcType=VARCHAR},
+            </if>
+            <if test="tokenId != null" >
+                token_id = #{tokenId,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+
+</mapper>

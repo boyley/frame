@@ -1,100 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bogle.frame.weixin.persistence.TokenMapper" >
-  <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Token" >
-    <id column="id" property="id" jdbcType="VARCHAR" />
-    <result column="access_token" property="accessToken" jdbcType="VARCHAR" />
-    <result column="openid" property="openid" jdbcType="VARCHAR" />
-    <result column="expires_in" property="expiresIn" jdbcType="BIGINT" />
-    <result column="create_time" property="createTime" jdbcType="BIGINT" />
-    <result column="refresh_token" property="refreshToken" jdbcType="VARCHAR" />
-    <result column="scope" property="scope" jdbcType="VARCHAR" />
-    <result column="unionid" property="unionid" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="log_id" property="logId" jdbcType="BIGINT" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    id, access_token, openid, expires_in, create_time, refresh_token, scope, unionid, 
-    type, log_id
+<mapper namespace="com.bogle.frame.weixin.persistence.TokenMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Token">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="access_token" property="accessToken" jdbcType="VARCHAR"/>
+        <result column="openid" property="openid" jdbcType="VARCHAR"/>
+        <result column="expires_in" property="expiresIn" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="refresh_token" property="refreshToken" jdbcType="VARCHAR"/>
+        <result column="scope" property="scope" jdbcType="VARCHAR"/>
+        <result column="unionid" property="unionid" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="errcode" property="errcode" jdbcType="INTEGER"/>
+        <result column="errmsg" property="errmsg" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+   id, access_token, openid, expires_in, create_time, refresh_token, scope, unionid,
+    type, errcode, errmsg
   </sql>
 
 
-  <select id="selectLast" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from weixin_access_token
-    WHERE
-    id=(SELECT MAX(id) FROM weixin_access_token WHERE type=#{0})
-  </select>
+    <select id="selectLast" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from weixin_token
+        WHERE
+        id=(SELECT MAX(id) FROM weixin_token WHERE type=#{0})
+    </select>
 
-  <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Token" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into weixin_access_token
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="accessToken != null" >
-        access_token,
-      </if>
-      <if test="openid != null" >
-        openid,
-      </if>
-      <if test="expiresIn != null" >
-        expires_in,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="refreshToken != null" >
-        refresh_token,
-      </if>
-      <if test="scope != null" >
-        scope,
-      </if>
-      <if test="unionid != null" >
-        unionid,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="logId != null" >
-        log_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="accessToken != null" >
-        #{accessToken,jdbcType=VARCHAR},
-      </if>
-      <if test="openid != null" >
-        #{openid,jdbcType=VARCHAR},
-      </if>
-      <if test="expiresIn != null" >
-        #{expiresIn,jdbcType=BIGINT},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=BIGINT},
-      </if>
-      <if test="refreshToken != null" >
-        #{refreshToken,jdbcType=VARCHAR},
-      </if>
-      <if test="scope != null" >
-        #{scope,jdbcType=VARCHAR},
-      </if>
-      <if test="unionid != null" >
-        #{unionid,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="logId != null" >
-        #{logId,jdbcType=BIGINT},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Token">
+        <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into weixin_access_token
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="accessToken != null">
+                access_token,
+            </if>
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="expiresIn != null">
+                expires_in,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="refreshToken != null">
+                refresh_token,
+            </if>
+            <if test="scope != null">
+                scope,
+            </if>
+            <if test="unionid != null">
+                unionid,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="errcode != null">
+                errcode,
+            </if>
+            <if test="errmsg != null">
+                errmsg,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="accessToken != null">
+                #{accessToken,jdbcType=VARCHAR},
+            </if>
+            <if test="openid != null">
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="expiresIn != null">
+                #{expiresIn,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="refreshToken != null">
+                #{refreshToken,jdbcType=VARCHAR},
+            </if>
+            <if test="scope != null">
+                #{scope,jdbcType=VARCHAR},
+            </if>
+            <if test="unionid != null">
+                #{unionid,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="errcode != null">
+                #{errcode,jdbcType=INTEGER},
+            </if>
+            <if test="errmsg != null">
+                #{errmsg,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 </mapper>

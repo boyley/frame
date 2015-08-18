@@ -3,19 +3,29 @@ package com.bogle.frame.weixin.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.bogle.frame.weixin.component.Http;
 import com.bogle.frame.weixin.config.WeixinConfiguration;
-import com.bogle.frame.weixin.defines.TicketType;
-import com.bogle.frame.weixin.defines.TokenType;
+import com.bogle.frame.weixin.defines.*;
+import com.bogle.frame.weixin.domain.Fans;
+import com.bogle.frame.weixin.domain.Qrcode;
 import com.bogle.frame.weixin.domain.Ticket;
 import com.bogle.frame.weixin.domain.Token;
+import com.bogle.frame.weixin.exception.WeixinException;
+import com.bogle.frame.weixin.message.Message;
+import com.bogle.frame.weixin.message.Template;
+import com.bogle.frame.weixin.message.template.TemplateMsg;
+import com.bogle.frame.weixin.message.ticket.ReqTicket;
 import com.bogle.frame.weixin.persistence.TicketMapper;
 import com.bogle.frame.weixin.persistence.TokenMapper;
 import com.bogle.frame.weixin.service.IWxApi;
+import com.bogle.frame.weixin.service.MessageHandler;
+import com.thoughtworks.xstream.XStream;
+import org.apache.catalina.util.URLEncoder;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
@@ -26,6 +36,15 @@ public class WxApi implements IWxApi {
 
     private final static Logger log = LoggerFactory.getLogger(WxApi.class);
 
+    private URLEncoder encoder = new URLEncoder();
+
+    private static final XStream xStream = new XStream();
+
+    static {
+        xStream.autodetectAnnotations(true);
+        xStream.processAnnotations(Message.class);
+    }
+
     @Autowired
     private WeixinConfiguration weixinConfiguration;
 
@@ -34,8 +53,12 @@ public class WxApi implements IWxApi {
 
     @Autowired
     private TokenMapper tokenMapper;
+
     @Autowired
     private TicketMapper ticketMapper;
+
+    @Autowired(required = false)
+    private MessageHandler messageHandler;
 
     private Token token;//基础access_token
 
@@ -85,7 +108,7 @@ public class WxApi implements IWxApi {
      * @return
      */
     @Override
-    public Token getToken() {
+    public Token getToken() throws WeixinException {
         //基础access_token
         if (this.token == null) {
             this.token = this.tokenMapper.selectLast(TokenType.BASE_ACCESS_TOKEN);
@@ -98,8 +121,8 @@ public class WxApi implements IWxApi {
                 return token;
             }
         }
-        String tokenUrl = String.format(BASE_ACCESS_TOKEN_API_URL, weixinConfiguration.getAppId(), weixinConfiguration.getAppSecret());
-        Token token = http.httpGet(tokenUrl, Token.class);
+        String url = String.format(BASE_ACCESS_TOKEN_API_URL, weixinConfiguration.getAppId(), weixinConfiguration.getAppSecret());
+        Token token = http.httpGet(url, Token.class);
         return token;
     }
 
@@ -110,11 +133,11 @@ public class WxApi implements IWxApi {
      * @return
      */
     @Override
-    public Token getToken(String code) {
+    public Token getToken(String code) throws WeixinException {
         //获取access_token
-        String oauth2TokenUrl = String.format(OAUTH2_ACCESS_TOKEN_API_URL, weixinConfiguration.getAppId(), weixinConfiguration.getAppSecret(), code);
+        String url = String.format(OAUTH2_ACCESS_TOKEN_API_URL, weixinConfiguration.getAppId(), weixinConfiguration.getAppSecret(), code);
         //网页的access_token
-        Token oauth2Token = http.httpGet(oauth2TokenUrl, Token.class);
+        Token oauth2Token = http.httpGet(url, Token.class);
         return oauth2Token;
     }
 
@@ -126,7 +149,7 @@ public class WxApi implements IWxApi {
      * @return
      */
     @Override
-    public Ticket getJSAPITicket(TicketType ticketType) {
+    public Ticket getTicket(TicketType ticketType) throws WeixinException {
         com.bogle.frame.weixin.domain.Ticket result = null;
         if (ticketType == TicketType.JSAPI_TICKET) {
             result = this.jsapiTicket; //微信JS接口的临时票据ticket
@@ -141,11 +164,10 @@ public class WxApi implements IWxApi {
             Long lastTokenCreateTime = result.getCreateTime() / 1000;
             Long gap = currentTime - lastTokenCreateTime;
             if (gap < result.getExpiresIn()) {
-
                 if (ticketType == TicketType.JSAPI_TICKET) {
-                    this.jssapiTicket = result;
+                    this.jsapiTicket = result;
                 } else if (ticketType == TicketType.JSAPI_CARD_TICKET) {
-                    this.jssapiCardTicket = result;
+                    this.cardTicket = result;
                 }
                 if (log.isInfoEnabled()) {
                     log.info("返回ticket:{}", JSON.toJSONString(result));
@@ -153,9 +175,195 @@ public class WxApi implements IWxApi {
                 return result;
             }
         }
-
-
-
+        String url;
+        if (ticketType == TicketType.JSAPI_TICKET) {
+            Token token = this.getToken();
+            url = String.format(JSAPI_TICKET_API_URL, token.getAccessToken());
+            this.jsapiTicket =  http.httpGet(url,Ticket.class);
+            return this.jsapiTicket;
+        } else if (ticketType == TicketType.JSAPI_CARD_TICKET) {
+            Token token = this.getToken();
+            url = String.format(JSAPI_CARD_TICKET_URL_API_URL, token.getAccessToken());
+            this.cardTicket =  http.httpGet(url, Ticket.class);
+            return this.cardTicket;
+        }
         throw new RuntimeException("请检查你要获取的卡券类型");
+    }
+
+
+    /**
+     * ticket获取
+     * 1. 投放卡券二维码ticket
+     * 2. 生成带参数的二维码ticket
+     * @param reqTicket
+     * @return
+     */
+    @Override
+    public Ticket getTicket(ReqTicket reqTicket) throws WeixinException {
+        ActionName actionName = reqTicket.getActionName();
+        String url = null;
+        if(actionName == ActionName.QR_CARD) {
+            //投放卡券二维码ticket
+            url = CARD_TICKET_URL_API_URL;
+        } else if(actionName == ActionName.QR_SCENE || actionName == ActionName.QR_LIMIT_SCENE || actionName == ActionName.QR_LIMIT_STR_SCENE) {
+            //生成带参数的二维码ticket ,QR_SCENE为临时;生成带参数的二维码ticket ,QR_LIMIT_SCENE永久;生成带参数的二维码ticket ,QR_LIMIT_STR_SCENE永久
+            url = QRCODE_TICKET_URL_API_URL;
+        }
+        if(url != null) {
+            Token token = this.getToken();
+            url = String.format(url,token.getAccessToken());
+            return http.httpPost(url,reqTicket,Ticket.class);
+        }
+        throw new RuntimeException("获取ticket的action_name有误，请检查");
+    }
+
+    /**
+     * 根据ticket获取二维码图片
+     * @param reqTicket
+     * @return
+     */
+    @Override
+    public Qrcode getQrcode(ReqTicket reqTicket) throws WeixinException {
+        Ticket ticket = this.getTicket(reqTicket);
+        String ticketString = encoder.encode(ticket.getTicket());
+        String url = String.format(QRCODE_URL_API_URL, ticketString);
+        byte[] bytes = http.httpGet(url);
+        return new Qrcode(bytes);
+    }
+
+
+    /**
+     * 网页授权获取用户基本信息
+     * @param code
+     * @return
+     */
+    @Override
+    public OauthDefines oauth2(String code) throws WeixinException {
+        Token token = null;
+        try {
+            token = this.getToken(code);
+        } catch (Exception e) {
+            if(e instanceof WeixinException) {
+                WeixinException ex = (WeixinException)e;
+                OauthDefines oauthDefines = new OauthDefines(ex.getErrcode());
+                if (log.isErrorEnabled()) {
+                    log.info("网页授权错误:{}", JSON.toJSONString(oauthDefines));
+                }
+                return oauthDefines;
+            }
+            e.printStackTrace();
+        }
+        //拉取用户信息(需scope为 snsapi_userinfo)
+        String url = String.format(SNSAPI_USERINFO_API_URL, token.getAccessToken(), token.getOpenid());
+        Fans userInfo = this.getFans(url);
+        if (log.isInfoEnabled()) {
+            log.info("获取用户信息:{}", JSON.toJSONString(userInfo));
+        }
+        OauthDefines oauthDefines = new OauthDefines(WxCode.SUCCESS, userInfo);
+        return oauthDefines;
+    }
+
+    @Override
+    public Fans getFans(String url) throws WeixinException {
+        return http.httpGet(url,Fans.class);
+    }
+
+    @Override
+    public Template send(TemplateMsg templateMsg) throws WeixinException {
+        Token token = this.getToken();
+        String url = String.format(SEND_TEMPLATE_MSG_URL,token.getAccessToken());
+        return http.httpPost(url,templateMsg,Template.class);
+    }
+
+    /**
+     * 接收处理消息
+     * @param reqMsg
+     * @return
+     */
+    @Override
+    public Serializable process(String reqMsg) {
+        Message message = (Message) xStream.fromXML(reqMsg);
+        Serializable result = process(message);
+        return result;
+    }
+
+    /**
+     * 处理消息
+     * @param message
+     * @return
+     */
+    private Serializable process(Message message) {
+        Message respMsg = null;
+        if (message.getMsgType().equals(MsgType.MESSAGETYPE_TEXT.toString())) {
+            //图文消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_IMAGE.toString())) {
+            //图片消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_VOICE.toString())) {
+            //语音消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_VIDEO.toString())) {
+            //视频消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_SHORTVIDEO.toString())) {
+            //小视频消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_LOCATION.toString())) {
+            //地理位置消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_MUSIC.toString())) {
+            //音乐消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_LINK.toString())) {
+            //链接消息
+        } else if (message.getMsgType().equals(MsgType.MESSAGETYPE_EVENT.toString())) {
+            //事件推送
+            if (message.getEvent() != null) {
+                String event = message.getEvent();
+                String eventKey = message.getEventKey();
+                if ((event.equals(Event.SCAN.toString())) || (eventKey != null && eventKey.startsWith(Event.KEY_QRSCENE.toString()) && event.equals(Event.SUBSCRIBE.toString()))) {
+                    /**用户扫描事件*/
+                } else if (event.equals(Event.SUBSCRIBE.toString())) {
+                    /**用户关注事件*/
+                } else if (event.equals(Event.UNSUBSCRIBE.toString())) {
+                    /**用户取消关注事件*/
+                } else if (event.equals(Event.LOCATION.toString())) {
+                    /**上报地理位置事件*/
+                } else if (event.equals(Event.CLICK)) {
+                    /**用户点击自定义菜单后，微信会把点击事件推送给开发者，请注意，点击菜单弹出子菜单，不会产生上报。*/
+                } else if (event.equals(Event.VIEW.toString())) {
+                    /**点击菜单跳转链接时的事件推送*/
+                } else if (event.equals(Event.SCANCODE_PUSH.toString())) {
+                    /**扫码推事件的事件推送*/
+                } else if (event.equals(Event.SCANCODE_WAITMSG.toString())) {
+                    /**扫码推事件且弹出“消息接收中”提示框的事件推送*/
+                } else if (event.equals(Event.PIC_SYSPHOTO.toString())) {
+                    /**弹出系统拍照发图的事件推送*/
+                } else if (event.equals(Event.PIC_PHOTO_OR_ALBUM.toString())) {
+                    /**弹出拍照或者相册发图的事件推送*/
+                } else if (event.equals(Event.PIC_WEIXIN.toString())) {
+                    /**弹出微信相册发图器的事件推送*/
+                } else if (event.equals(Event.LOCATION_SELECT.toString())) {
+                    /**弹出地理位置选择器的事件推送*/
+                } else if (event.equals(Event.POI_CHECK_NOTIFY.toString())) {
+                    /**门店审核事件推送*/
+                } else if (event.equals(Event.CARD_PASS_CHECK.toString())) {
+                    /**卡券通过审核*/
+                } else if (event.equals(Event.CARD_NOT_PASS_CHECK.toString())) {
+                    /**卡券未通过审核*/
+                } else if (event.equals(Event.USER_GET_CARD.toString())) {
+                    /**领取事件推送*/
+                } else if (event.equals(Event.USER_DEL_CARD.toString())) {
+                    /**删除事件推送*/
+                } else if (event.equals(Event.USER_CONSUME_CARD.toString())) {
+                    /**核销事件*/
+                } else if (event.equals(Event.USER_VIEW_CARD.toString())) {
+                    /**核销事件，进入会员卡事件推送*/
+                } else if (event.equals(Event.USER_ENTER_SESSION_FROM_CARD.toString())) {
+                    /**从卡券进入公众号会话事件推送*/
+                }
+            }
+        }
+
+        String xml = "";
+        if (respMsg != null) {
+            respMsg.setCreateTime(System.currentTimeMillis() / 1000);
+            xml = xStream.toXML(respMsg);
+        }
+        return xml;
     }
 }

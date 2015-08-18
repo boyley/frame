@@ -11,7 +11,7 @@ public class Ticket extends WxMsg {
     private Long expireSeconds;
 
     @JSONField(name = "expires_in")
-    private Long expiresIn;
+    private Integer expiresIn;
 
     @JSONField(name = "url")
     private String url;
@@ -47,11 +47,11 @@ public class Ticket extends WxMsg {
         this.expireSeconds = expireSeconds;
     }
 
-    public Long getExpiresIn() {
+    public Integer getExpiresIn() {
         return expiresIn;
     }
 
-    public void setExpiresIn(Long expiresIn) {
+    public void setExpiresIn(Integer expiresIn) {
         this.expiresIn = expiresIn;
     }
 

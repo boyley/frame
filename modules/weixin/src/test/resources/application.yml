@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/p2p
+    url: jdbc:mysql://localhost:3306/frame
     username: root
     password: root
   mybatis:

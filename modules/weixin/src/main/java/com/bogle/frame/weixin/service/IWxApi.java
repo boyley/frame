@@ -1,13 +1,18 @@
 package com.bogle.frame.weixin.service;
 
+import com.bogle.frame.weixin.defines.OauthDefines;
 import com.bogle.frame.weixin.defines.TicketType;
-import com.bogle.frame.weixin.message.Ticket;
-import com.bogle.frame.weixin.message.Token;
+import com.bogle.frame.weixin.exception.WeixinException;
+import com.bogle.frame.weixin.message.*;
+import com.bogle.frame.weixin.message.template.TemplateMsg;
+import com.bogle.frame.weixin.message.ticket.ReqTicket;
+
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2015/8/17.
  */
-public interface IWxApi extends IWexinApiUrl{
+public interface IWxApi extends IWexinApiUrl {
 
     /**
      * 在开发者首次提交验证申请时，微信服务器将发送GET请求到填写的URL上，
@@ -31,23 +36,76 @@ public interface IWxApi extends IWexinApiUrl{
 
     /**
      * 获取基础交互的access_token信息
+     *
      * @return
      */
-    Token getToken();
+    Token getToken() throws WeixinException;
 
     /**
      * 网页授权access_token
+     *
      * @param code
      * @return
      */
-    Token getToken(String code);
+    Token getToken(String code) throws WeixinException;
 
 
     /**
      * 获取jssdk的ticket
      * 1.jsapi_ticket是公众号用于调用微信JS接口的临时票据
      * 2.微信卡券接口中使用的签名凭证api_ticket
+     *
      * @return
      */
-    Ticket getJSAPITicket(TicketType ticketType);
+    Ticket getTicket(TicketType ticketType) throws WeixinException;
+
+    /**
+     * ticket获取
+     * 1. 投放卡券二维码ticket
+     * 2. 生成带参数的二维码ticket
+     *
+     * @param reqTicket
+     * @return
+     */
+    Ticket getTicket(ReqTicket reqTicket) throws WeixinException;
+
+    /**
+     * 获取二维码信息
+     *
+     * @param reqTicket
+     * @return
+     */
+    Qrcode getQrcode(ReqTicket reqTicket) throws WeixinException;
+
+    /**
+     * 网页授权获取用户基本信息
+     *
+     * @param code
+     * @return
+     */
+    OauthDefines oauth2(String code) throws WeixinException;
+
+    /**
+     * 获取用户信息
+     *
+     * @param url
+     * @return
+     */
+    Fans getFans(String url) throws WeixinException;
+
+    /**
+     * 发送模板消息
+     * @param templateMsg
+     * @return
+     * @throws WeixinException
+     */
+    Template send(TemplateMsg templateMsg) throws WeixinException;
+
+
+    /**
+     * 接收处理消息
+     * @param reqMsg
+     * @return
+     */
+    Serializable process(String reqMsg);
 }

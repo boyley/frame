@@ -1,4 +1,4 @@
-package com.bogle.frame.weixin.message.req;
+package com.bogle.frame.weixin.message.ticket;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonProperty;

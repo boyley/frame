@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.weixin.persistence.QrcodeMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Qrcode" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="scene_name" property="sceneName" jdbcType="VARCHAR" />
+    <result column="ticket_id" property="ticketId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="suffix" property="suffix" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="BIT" />
+    <result column="bytes" property="bytes" jdbcType="LONGVARBINARY" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, scene_name, ticket_id, create_time, suffix, name, enable,bytes
+  </sql>
+
+  <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Qrcode" >
+    insert into weixin_qrcode
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sceneName != null" >
+        scene_name,
+      </if>
+      <if test="ticketId != null" >
+        ticket_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="suffix != null" >
+        suffix,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="enable != null" >
+        enable,
+      </if>
+      <if test="bytes != null" >
+        bytes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneName != null" >
+        #{sceneName,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketId != null" >
+        #{ticketId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="suffix != null" >
+        #{suffix,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=BIT},
+      </if>
+      <if test="bytes != null" >
+        #{bytes,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.Qrcode" >
+    update weixin_qrcode
+    <set >
+      <if test="sceneName != null" >
+        scene_name = #{sceneName,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketId != null" >
+        ticket_id = #{ticketId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="suffix != null" >
+        suffix = #{suffix,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null" >
+        enable = #{enable,jdbcType=BIT},
+      </if>
+      <if test="bytes != null" >
+        bytes = #{bytes,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

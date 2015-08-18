@@ -1,4 +1,4 @@
-package com.bogle.frame.weixin.message.req;
+package com.bogle.frame.weixin.message.ticket;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.bogle.frame.weixin.defines.ActionName;
@@ -11,6 +11,8 @@ import java.util.Map;
  * Created by Administrator on 2015/6/4.
  */
 public class ReqTicket implements Serializable {
+
+    private static final int MAX_EXPIRE_SECONDS = 604800;
 
     @JSONField(name = "action_name")
     private ActionName actionName;//二维码类型，QR_SCENE为临时,QR_LIMIT_SCENE为永久,QR_LIMIT_STR_SCENE为永久的字符串参数值
@@ -30,14 +32,25 @@ public class ReqTicket implements Serializable {
     public ReqTicket(ActionName actionName, Serializable scene) {
         this.actionName = actionName;
         Map<String, Serializable> scenet = new HashMap();
-        if (scene instanceof String) {
+        if (actionName == ActionName.QR_SCENE || actionName == ActionName.QR_LIMIT_SCENE) {
+            if (actionName == ActionName.QR_SCENE) {
+                this.expireSeconds = MAX_EXPIRE_SECONDS;
+            }
+            if (scene instanceof Integer) {
+                //临时二维码,永久二维码
+                scenet.put("scene_id", scene);
+                this.actionInfo = new HashMap<>();
+                this.actionInfo.put("scene", scenet);
+            } else {
+                throw new RuntimeException(actionName + "不支持String类型的场景值");
+            }
+        } else if (actionName == ActionName.QR_LIMIT_STR_SCENE) {
+            //永久二维码，scene为String
             scenet.put("scene_str", scene);
             this.actionInfo = new HashMap<>();
             this.actionInfo.put("scene", scenet);
         } else {
-            scenet.put("scene_id", scene);
-            this.actionInfo = new HashMap<>();
-            this.actionInfo.put("scene", scenet);
+            throw new RuntimeException("不支持" + actionName + "ticket的创建");
         }
     }
 
@@ -71,6 +84,26 @@ public class ReqTicket implements Serializable {
         this.openid = openid;
         this.expireSeconds = expireSeconds;
         this.uniqueCode = uniqueCode;
+    }
+
+    public ReqTicket(String cardId) {
+        this.actionName = ActionName.QR_CARD;
+        Map<String, Serializable> card = new HashMap();
+        card.put("card_id", cardId);
+        this.cardId = cardId;
+        this.actionInfo = new HashMap<>();
+        this.actionInfo.put("card", card);
+    }
+
+    private void generateCard(String key, Serializable value) {
+        if (this.actionInfo == null)
+            this.actionInfo = new HashMap<>();
+        Map<String, Serializable> card = this.actionInfo.get("card");
+        if (card == null) {
+            card = new HashMap<>();
+        }
+        card.put(key, value);
+        this.actionInfo.put("card", card);
     }
 
     public Serializable generateScene() {
@@ -110,6 +143,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setCardId(String cardId) {
+        generateCard("card_id", cardId);
         this.cardId = cardId;
     }
 
@@ -118,6 +152,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setOuterId(Integer outerId) {
+        generateCard("outer_id", outerId);
         this.outerId = outerId;
     }
 
@@ -126,6 +161,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setCode(String code) {
+        generateCard("code", code);
         this.code = code;
     }
 
@@ -134,6 +170,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setOpenid(String openid) {
+        generateCard("openid", openid);
         this.openid = openid;
     }
 
@@ -142,6 +179,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setExpireSeconds(Integer expireSeconds) {
+        generateCard("expire_seconds", expireSeconds);
         this.expireSeconds = expireSeconds;
     }
 
@@ -150,6 +188,7 @@ public class ReqTicket implements Serializable {
     }
 
     public void setUniqueCode(Boolean uniqueCode) {
+        generateCard("is_unique_code", uniqueCode);
         this.uniqueCode = uniqueCode;
     }
 }
