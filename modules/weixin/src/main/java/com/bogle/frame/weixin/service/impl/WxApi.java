@@ -8,6 +8,7 @@ import com.bogle.frame.weixin.domain.Fans;
 import com.bogle.frame.weixin.domain.Qrcode;
 import com.bogle.frame.weixin.domain.Ticket;
 import com.bogle.frame.weixin.domain.Token;
+import com.bogle.frame.weixin.event.MessageEvent;
 import com.bogle.frame.weixin.exception.WeixinException;
 import com.bogle.frame.weixin.message.Message;
 import com.bogle.frame.weixin.message.Template;
@@ -23,6 +24,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -59,6 +61,9 @@ public class WxApi implements IWxApi {
 
     @Autowired(required = false)
     private MessageHandler messageHandler;
+
+    @Autowired
+    private ApplicationEventPublisher publisher;
 
     private Token token;//基础access_token
 
@@ -241,10 +246,15 @@ public class WxApi implements IWxApi {
      * @return
      */
     @Override
-    public OauthDefines oauth2(String code) throws WeixinException {
+    public OauthDefines oauth2(String code) {
         Token token = null;
         try {
             token = this.getToken(code);
+            //拉取用户信息(需scope为 snsapi_userinfo)
+            String url = String.format(SNSAPI_USERINFO_API_URL, token.getAccessToken(), token.getOpenid());
+            Fans userInfo = this.getFans(url);
+            OauthDefines oauthDefines = new OauthDefines(WxCode.SUCCESS, userInfo);
+            return oauthDefines;
         } catch (Exception e) {
             if (e instanceof WeixinException) {
                 WeixinException ex = (WeixinException) e;
@@ -253,16 +263,10 @@ public class WxApi implements IWxApi {
                     log.info("网页授权错误:{}", JSON.toJSONString(oauthDefines));
                 }
                 return oauthDefines;
-            }
-            e.printStackTrace();
+            } else
+                e.printStackTrace();
         }
-        //拉取用户信息(需scope为 snsapi_userinfo)
-        String url = String.format(SNSAPI_USERINFO_API_URL, token.getAccessToken(), token.getOpenid());
-        Fans userInfo = this.getFans(url);
-        if (log.isInfoEnabled()) {
-            log.info("获取用户信息:{}", JSON.toJSONString(userInfo));
-        }
-        OauthDefines oauthDefines = new OauthDefines(WxCode.SUCCESS, userInfo);
+        OauthDefines oauthDefines = new OauthDefines(WxCode.ERROR);
         return oauthDefines;
     }
 
@@ -298,6 +302,7 @@ public class WxApi implements IWxApi {
      * @return
      */
     private Serializable process(Message message) {
+        publisher.publishEvent(new MessageEvent(this, message, this.weixinConfiguration.getAppId()));
         Message respMsg = null;
         if (message.getMsgType().equals(MsgType.MESSAGETYPE_TEXT.toString())) {
             //图文消息

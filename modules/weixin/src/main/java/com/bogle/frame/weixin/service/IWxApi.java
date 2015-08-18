@@ -85,7 +85,7 @@ public interface IWxApi extends IWexinApiUrl {
      * @param code
      * @return
      */
-    OauthDefines oauth2(String code) throws WeixinException;
+    OauthDefines oauth2(String code);
 
     /**
      * 获取用户信息

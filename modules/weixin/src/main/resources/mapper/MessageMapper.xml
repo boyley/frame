@@ -1,406 +1,396 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bogle.frame.weixin.persistence.MessageMapper" >
-  <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Message" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="app_id" property="appId" jdbcType="VARCHAR" />
-    <result column="to_user_name" property="toUserName" jdbcType="VARCHAR" />
-    <result column="from_user_name" property="fromUserName" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="BIGINT" />
-    <result column="msg_id" property="msgId" jdbcType="VARCHAR" />
-    <result column="msg_type" property="msgType" jdbcType="VARCHAR" />
-    <result column="event" property="event" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
-    <result column="media_id" property="mediaId" jdbcType="VARCHAR" />
-    <result column="format" property="format" jdbcType="VARCHAR" />
-    <result column="thumb_media_id" property="thumbMediaId" jdbcType="VARCHAR" />
-    <result column="location_X" property="locationX" jdbcType="VARCHAR" />
-    <result column="location_Y" property="locationY" jdbcType="VARCHAR" />
-    <result column="scale" property="scale" jdbcType="VARCHAR" />
-    <result column="label" property="label" jdbcType="VARCHAR" />
-    <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="url" property="url" jdbcType="VARCHAR" />
-    <result column="event_key" property="eventKey" jdbcType="VARCHAR" />
-    <result column="ticket" property="ticket" jdbcType="VARCHAR" />
-    <result column="latitude" property="latitude" jdbcType="VARCHAR" />
-    <result column="longitude" property="longitude" jdbcType="VARCHAR" />
-    <result column="precision" property="precision" jdbcType="VARCHAR" />
-    <result column="article_count" property="articleCount" jdbcType="INTEGER" />
-    <result column="uniq_id" property="uniqId" jdbcType="VARCHAR" />
-    <result column="poi_id" property="poiId" jdbcType="VARCHAR" />
-    <result column="result" property="result" jdbcType="VARCHAR" />
-    <result column="card_id" property="cardId" jdbcType="VARCHAR" />
-    <result column="give_by_friend" property="giveByFriend" jdbcType="BIT" />
-    <result column="user_card_code" property="userCardCode" jdbcType="VARCHAR" />
-    <result column="old_user_card_code" property="oldUserCardCode" jdbcType="VARCHAR" />
-    <result column="outer_id" property="outerId" jdbcType="VARCHAR" />
-    <result column="consume_source" property="consumeSource" jdbcType="VARCHAR" />
-    <result column="content" property="content" jdbcType="LONGVARCHAR" />
-    <result column="recognition" property="recognition" jdbcType="LONGVARCHAR" />
-    <result column="msg" property="msg" jdbcType="LONGVARCHAR" />
-  </resultMap>
+<mapper namespace="com.bogle.frame.weixin.persistence.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.Message">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="app_id" property="appId" jdbcType="VARCHAR"/>
+        <result column="to_user_name" property="toUserName" jdbcType="VARCHAR"/>
+        <result column="from_user_name" property="fromUserName" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="msg_id" property="msgId" jdbcType="VARCHAR"/>
+        <result column="msg_type" property="msgType" jdbcType="VARCHAR"/>
+        <result column="event" property="event" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="media_id" property="mediaId" jdbcType="VARCHAR"/>
+        <result column="format" property="format" jdbcType="VARCHAR"/>
+        <result column="thumb_media_id" property="thumbMediaId" jdbcType="VARCHAR"/>
+        <result column="location_X" property="locationX" jdbcType="VARCHAR"/>
+        <result column="location_Y" property="locationY" jdbcType="VARCHAR"/>
+        <result column="scale" property="scale" jdbcType="VARCHAR"/>
+        <result column="label" property="label" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="event_key" property="eventKey" jdbcType="VARCHAR"/>
+        <result column="ticket" property="ticket" jdbcType="VARCHAR"/>
+        <result column="latitude" property="latitude" jdbcType="VARCHAR"/>
+        <result column="longitude" property="longitude" jdbcType="VARCHAR"/>
+        <result column="precision" property="precision" jdbcType="VARCHAR"/>
+        <result column="article_count" property="articleCount" jdbcType="INTEGER"/>
+        <result column="uniq_id" property="uniqId" jdbcType="VARCHAR"/>
+        <result column="poi_id" property="poiId" jdbcType="VARCHAR"/>
+        <result column="result" property="result" jdbcType="VARCHAR"/>
+        <result column="card_id" property="cardId" jdbcType="VARCHAR"/>
+        <result column="give_by_friend" property="giveByFriend" jdbcType="BIT"/>
+        <result column="user_card_code" property="userCardCode" jdbcType="VARCHAR"/>
+        <result column="old_user_card_code" property="oldUserCardCode" jdbcType="VARCHAR"/>
+        <result column="outer_id" property="outerId" jdbcType="VARCHAR"/>
+        <result column="consume_source" property="consumeSource" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+        <result column="recognition" property="recognition" jdbcType="LONGVARCHAR"/>
+        <result column="msg" property="msg" jdbcType="LONGVARCHAR"/>
+    </resultMap>
 
-  <sql id="Base_Column_List" >
-    id, app_id, to_user_name, from_user_name, create_time, msg_id, msg_type, event, type, 
+    <sql id="Base_Column_List">
+    id, app_id, to_user_name, from_user_name, create_time, msg_id, msg_type, event,
     pic_url, media_id, format, thumb_media_id, location_X, location_Y, scale, label, 
     title, description, url, event_key, ticket, latitude, longitude, precision, article_count, 
     uniq_id, poi_id, result, card_id, give_by_friend, user_card_code, old_user_card_code, 
     outer_id, consume_source,content, recognition, msg
   </sql>
 
-  <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Message" >
-    insert into weixin_message
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="appId != null" >
-        app_id,
-      </if>
-      <if test="toUserName != null" >
-        to_user_name,
-      </if>
-      <if test="fromUserName != null" >
-        from_user_name,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="msgId != null" >
-        msg_id,
-      </if>
-      <if test="msgType != null" >
-        msg_type,
-      </if>
-      <if test="event != null" >
-        event,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="picUrl != null" >
-        pic_url,
-      </if>
-      <if test="mediaId != null" >
-        media_id,
-      </if>
-      <if test="format != null" >
-        format,
-      </if>
-      <if test="thumbMediaId != null" >
-        thumb_media_id,
-      </if>
-      <if test="locationX != null" >
-        location_X,
-      </if>
-      <if test="locationY != null" >
-        location_Y,
-      </if>
-      <if test="scale != null" >
-        scale,
-      </if>
-      <if test="label != null" >
-        label,
-      </if>
-      <if test="title != null" >
-        title,
-      </if>
-      <if test="description != null" >
-        description,
-      </if>
-      <if test="url != null" >
-        url,
-      </if>
-      <if test="eventKey != null" >
-        event_key,
-      </if>
-      <if test="ticket != null" >
-        ticket,
-      </if>
-      <if test="latitude != null" >
-        latitude,
-      </if>
-      <if test="longitude != null" >
-        longitude,
-      </if>
-      <if test="precision != null" >
-        precision,
-      </if>
-      <if test="articleCount != null" >
-        article_count,
-      </if>
-      <if test="uniqId != null" >
-        uniq_id,
-      </if>
-      <if test="poiId != null" >
-        poi_id,
-      </if>
-      <if test="result != null" >
-        result,
-      </if>
-      <if test="cardId != null" >
-        card_id,
-      </if>
-      <if test="giveByFriend != null" >
-        give_by_friend,
-      </if>
-      <if test="userCardCode != null" >
-        user_card_code,
-      </if>
-      <if test="oldUserCardCode != null" >
-        old_user_card_code,
-      </if>
-      <if test="outerId != null" >
-        outer_id,
-      </if>
-      <if test="consumeSource != null" >
-        consume_source,
-      </if>
-      <if test="content != null" >
-        content,
-      </if>
-      <if test="recognition != null" >
-        recognition,
-      </if>
-      <if test="msg != null" >
-        msg,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="appId != null" >
-        #{appId,jdbcType=VARCHAR},
-      </if>
-      <if test="toUserName != null" >
-        #{toUserName,jdbcType=VARCHAR},
-      </if>
-      <if test="fromUserName != null" >
-        #{fromUserName,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=BIGINT},
-      </if>
-      <if test="msgId != null" >
-        #{msgId,jdbcType=VARCHAR},
-      </if>
-      <if test="msgType != null" >
-        #{msgType,jdbcType=VARCHAR},
-      </if>
-      <if test="event != null" >
-        #{event,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="picUrl != null" >
-        #{picUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="mediaId != null" >
-        #{mediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="format != null" >
-        #{format,jdbcType=VARCHAR},
-      </if>
-      <if test="thumbMediaId != null" >
-        #{thumbMediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="locationX != null" >
-        #{locationX,jdbcType=VARCHAR},
-      </if>
-      <if test="locationY != null" >
-        #{locationY,jdbcType=VARCHAR},
-      </if>
-      <if test="scale != null" >
-        #{scale,jdbcType=VARCHAR},
-      </if>
-      <if test="label != null" >
-        #{label,jdbcType=VARCHAR},
-      </if>
-      <if test="title != null" >
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null" >
-        #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null" >
-        #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="eventKey != null" >
-        #{eventKey,jdbcType=VARCHAR},
-      </if>
-      <if test="ticket != null" >
-        #{ticket,jdbcType=VARCHAR},
-      </if>
-      <if test="latitude != null" >
-        #{latitude,jdbcType=VARCHAR},
-      </if>
-      <if test="longitude != null" >
-        #{longitude,jdbcType=VARCHAR},
-      </if>
-      <if test="precision != null" >
-        #{precision,jdbcType=VARCHAR},
-      </if>
-      <if test="articleCount != null" >
-        #{articleCount,jdbcType=INTEGER},
-      </if>
-      <if test="uniqId != null" >
-        #{uniqId,jdbcType=VARCHAR},
-      </if>
-      <if test="poiId != null" >
-        #{poiId,jdbcType=VARCHAR},
-      </if>
-      <if test="result != null" >
-        #{result,jdbcType=VARCHAR},
-      </if>
-      <if test="cardId != null" >
-        #{cardId,jdbcType=VARCHAR},
-      </if>
-      <if test="giveByFriend != null" >
-        #{giveByFriend,jdbcType=BIT},
-      </if>
-      <if test="userCardCode != null" >
-        #{userCardCode,jdbcType=VARCHAR},
-      </if>
-      <if test="oldUserCardCode != null" >
-        #{oldUserCardCode,jdbcType=VARCHAR},
-      </if>
-      <if test="outerId != null" >
-        #{outerId,jdbcType=VARCHAR},
-      </if>
-      <if test="consumeSource != null" >
-        #{consumeSource,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null" >
-        #{content,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="recognition != null" >
-        #{recognition,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="msg != null" >
-        #{msg,jdbcType=LONGVARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.Message" >
-    update weixin_message
-    <set >
-      <if test="appId != null" >
-        app_id = #{appId,jdbcType=VARCHAR},
-      </if>
-      <if test="toUserName != null" >
-        to_user_name = #{toUserName,jdbcType=VARCHAR},
-      </if>
-      <if test="fromUserName != null" >
-        from_user_name = #{fromUserName,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=BIGINT},
-      </if>
-      <if test="msgId != null" >
-        msg_id = #{msgId,jdbcType=VARCHAR},
-      </if>
-      <if test="msgType != null" >
-        msg_type = #{msgType,jdbcType=VARCHAR},
-      </if>
-      <if test="event != null" >
-        event = #{event,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="picUrl != null" >
-        pic_url = #{picUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="mediaId != null" >
-        media_id = #{mediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="format != null" >
-        format = #{format,jdbcType=VARCHAR},
-      </if>
-      <if test="thumbMediaId != null" >
-        thumb_media_id = #{thumbMediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="locationX != null" >
-        location_X = #{locationX,jdbcType=VARCHAR},
-      </if>
-      <if test="locationY != null" >
-        location_Y = #{locationY,jdbcType=VARCHAR},
-      </if>
-      <if test="scale != null" >
-        scale = #{scale,jdbcType=VARCHAR},
-      </if>
-      <if test="label != null" >
-        label = #{label,jdbcType=VARCHAR},
-      </if>
-      <if test="title != null" >
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null" >
-        description = #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="url != null" >
-        url = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="eventKey != null" >
-        event_key = #{eventKey,jdbcType=VARCHAR},
-      </if>
-      <if test="ticket != null" >
-        ticket = #{ticket,jdbcType=VARCHAR},
-      </if>
-      <if test="latitude != null" >
-        latitude = #{latitude,jdbcType=VARCHAR},
-      </if>
-      <if test="longitude != null" >
-        longitude = #{longitude,jdbcType=VARCHAR},
-      </if>
-      <if test="precision != null" >
-        precision = #{precision,jdbcType=VARCHAR},
-      </if>
-      <if test="articleCount != null" >
-        article_count = #{articleCount,jdbcType=INTEGER},
-      </if>
-      <if test="uniqId != null" >
-        uniq_id = #{uniqId,jdbcType=VARCHAR},
-      </if>
-      <if test="poiId != null" >
-        poi_id = #{poiId,jdbcType=VARCHAR},
-      </if>
-      <if test="result != null" >
-        result = #{result,jdbcType=VARCHAR},
-      </if>
-      <if test="cardId != null" >
-        card_id = #{cardId,jdbcType=VARCHAR},
-      </if>
-      <if test="giveByFriend != null" >
-        give_by_friend = #{giveByFriend,jdbcType=BIT},
-      </if>
-      <if test="userCardCode != null" >
-        user_card_code = #{userCardCode,jdbcType=VARCHAR},
-      </if>
-      <if test="oldUserCardCode != null" >
-        old_user_card_code = #{oldUserCardCode,jdbcType=VARCHAR},
-      </if>
-      <if test="outerId != null" >
-        outer_id = #{outerId,jdbcType=VARCHAR},
-      </if>
-      <if test="consumeSource != null" >
-        consume_source = #{consumeSource,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null" >
-        content = #{content,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="recognition != null" >
-        recognition = #{recognition,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="msg != null" >
-        msg = #{msg,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.Message">
+        insert into weixin_message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="appId != null">
+                app_id,
+            </if>
+            <if test="toUserName != null">
+                to_user_name,
+            </if>
+            <if test="fromUserName != null">
+                from_user_name,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="msgId != null">
+                msg_id,
+            </if>
+            <if test="msgType != null">
+                msg_type,
+            </if>
+            <if test="event != null">
+                event,
+            </if>
+            <if test="picUrl != null">
+                pic_url,
+            </if>
+            <if test="mediaId != null">
+                media_id,
+            </if>
+            <if test="format != null">
+                format,
+            </if>
+            <if test="thumbMediaId != null">
+                thumb_media_id,
+            </if>
+            <if test="locationX != null">
+                location_X,
+            </if>
+            <if test="locationY != null">
+                location_Y,
+            </if>
+            <if test="scale != null">
+                scale,
+            </if>
+            <if test="label != null">
+                label,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="eventKey != null">
+                event_key,
+            </if>
+            <if test="ticket != null">
+                ticket,
+            </if>
+            <if test="latitude != null">
+                latitude,
+            </if>
+            <if test="longitude != null">
+                longitude,
+            </if>
+            <if test="precision != null">
+                precision,
+            </if>
+            <if test="articleCount != null">
+                article_count,
+            </if>
+            <if test="uniqId != null">
+                uniq_id,
+            </if>
+            <if test="poiId != null">
+                poi_id,
+            </if>
+            <if test="result != null">
+                result,
+            </if>
+            <if test="cardId != null">
+                card_id,
+            </if>
+            <if test="giveByFriend != null">
+                give_by_friend,
+            </if>
+            <if test="userCardCode != null">
+                user_card_code,
+            </if>
+            <if test="oldUserCardCode != null">
+                old_user_card_code,
+            </if>
+            <if test="outerId != null">
+                outer_id,
+            </if>
+            <if test="consumeSource != null">
+                consume_source,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="recognition != null">
+                recognition,
+            </if>
+            <if test="msg != null">
+                msg,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="appId != null">
+                #{appId,jdbcType=VARCHAR},
+            </if>
+            <if test="toUserName != null">
+                #{toUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUserName != null">
+                #{fromUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="msgId != null">
+                #{msgId,jdbcType=VARCHAR},
+            </if>
+            <if test="msgType != null">
+                #{msgType,jdbcType=VARCHAR},
+            </if>
+            <if test="event != null">
+                #{event,jdbcType=VARCHAR},
+            </if>
+            <if test="picUrl != null">
+                #{picUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="mediaId != null">
+                #{mediaId,jdbcType=VARCHAR},
+            </if>
+            <if test="format != null">
+                #{format,jdbcType=VARCHAR},
+            </if>
+            <if test="thumbMediaId != null">
+                #{thumbMediaId,jdbcType=VARCHAR},
+            </if>
+            <if test="locationX != null">
+                #{locationX,jdbcType=VARCHAR},
+            </if>
+            <if test="locationY != null">
+                #{locationY,jdbcType=VARCHAR},
+            </if>
+            <if test="scale != null">
+                #{scale,jdbcType=VARCHAR},
+            </if>
+            <if test="label != null">
+                #{label,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="eventKey != null">
+                #{eventKey,jdbcType=VARCHAR},
+            </if>
+            <if test="ticket != null">
+                #{ticket,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null">
+                #{latitude,jdbcType=VARCHAR},
+            </if>
+            <if test="longitude != null">
+                #{longitude,jdbcType=VARCHAR},
+            </if>
+            <if test="precision != null">
+                #{precision,jdbcType=VARCHAR},
+            </if>
+            <if test="articleCount != null">
+                #{articleCount,jdbcType=INTEGER},
+            </if>
+            <if test="uniqId != null">
+                #{uniqId,jdbcType=VARCHAR},
+            </if>
+            <if test="poiId != null">
+                #{poiId,jdbcType=VARCHAR},
+            </if>
+            <if test="result != null">
+                #{result,jdbcType=VARCHAR},
+            </if>
+            <if test="cardId != null">
+                #{cardId,jdbcType=VARCHAR},
+            </if>
+            <if test="giveByFriend != null">
+                #{giveByFriend,jdbcType=BIT},
+            </if>
+            <if test="userCardCode != null">
+                #{userCardCode,jdbcType=VARCHAR},
+            </if>
+            <if test="oldUserCardCode != null">
+                #{oldUserCardCode,jdbcType=VARCHAR},
+            </if>
+            <if test="outerId != null">
+                #{outerId,jdbcType=VARCHAR},
+            </if>
+            <if test="consumeSource != null">
+                #{consumeSource,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="recognition != null">
+                #{recognition,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="msg != null">
+                #{msg,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.Message">
+        update weixin_message
+        <set >
+            <if test="appId != null" >
+                app_id = #{appId,jdbcType=VARCHAR},
+            </if>
+            <if test="toUserName != null" >
+                to_user_name = #{toUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="fromUserName != null" >
+                from_user_name = #{fromUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                create_time = #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="msgId != null" >
+                msg_id = #{msgId,jdbcType=VARCHAR},
+            </if>
+            <if test="msgType != null" >
+                msg_type = #{msgType,jdbcType=VARCHAR},
+            </if>
+            <if test="event != null" >
+                event = #{event,jdbcType=VARCHAR},
+            </if>
+            <if test="picUrl != null" >
+                pic_url = #{picUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="mediaId != null" >
+                media_id = #{mediaId,jdbcType=VARCHAR},
+            </if>
+            <if test="format != null" >
+                format = #{format,jdbcType=VARCHAR},
+            </if>
+            <if test="thumbMediaId != null" >
+                thumb_media_id = #{thumbMediaId,jdbcType=VARCHAR},
+            </if>
+            <if test="locationX != null" >
+                location_X = #{locationX,jdbcType=VARCHAR},
+            </if>
+            <if test="locationY != null" >
+                location_Y = #{locationY,jdbcType=VARCHAR},
+            </if>
+            <if test="scale != null" >
+                scale = #{scale,jdbcType=VARCHAR},
+            </if>
+            <if test="label != null" >
+                label = #{label,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null" >
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null" >
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="eventKey != null" >
+                event_key = #{eventKey,jdbcType=VARCHAR},
+            </if>
+            <if test="ticket != null" >
+                ticket = #{ticket,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null" >
+                latitude = #{latitude,jdbcType=VARCHAR},
+            </if>
+            <if test="longitude != null" >
+                longitude = #{longitude,jdbcType=VARCHAR},
+            </if>
+            <if test="precision != null" >
+                precision = #{precision,jdbcType=VARCHAR},
+            </if>
+            <if test="articleCount != null" >
+                article_count = #{articleCount,jdbcType=INTEGER},
+            </if>
+            <if test="uniqId != null" >
+                uniq_id = #{uniqId,jdbcType=VARCHAR},
+            </if>
+            <if test="poiId != null" >
+                poi_id = #{poiId,jdbcType=VARCHAR},
+            </if>
+            <if test="result != null" >
+                result = #{result,jdbcType=VARCHAR},
+            </if>
+            <if test="cardId != null" >
+                card_id = #{cardId,jdbcType=VARCHAR},
+            </if>
+            <if test="giveByFriend != null" >
+                give_by_friend = #{giveByFriend,jdbcType=BIT},
+            </if>
+            <if test="userCardCode != null" >
+                user_card_code = #{userCardCode,jdbcType=VARCHAR},
+            </if>
+            <if test="oldUserCardCode != null" >
+                old_user_card_code = #{oldUserCardCode,jdbcType=VARCHAR},
+            </if>
+            <if test="outerId != null" >
+                outer_id = #{outerId,jdbcType=VARCHAR},
+            </if>
+            <if test="consumeSource != null" >
+                consume_source = #{consumeSource,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null" >
+                content = #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="recognition != null" >
+                recognition = #{recognition,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="msg != null" >
+                msg = #{msg,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
 
 </mapper>
