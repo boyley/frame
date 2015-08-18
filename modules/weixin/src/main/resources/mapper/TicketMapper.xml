@@ -17,10 +17,12 @@
         <result column="errcode" property="errcode" jdbcType="INTEGER" />
         <result column="errmsg" property="errmsg" jdbcType="VARCHAR" />
         <result column="token_id" property="tokenId" jdbcType="VARCHAR" />
+        <result column="scene_id" property="sceneId" jdbcType="INTEGER" />
+        <result column="scene_str" property="sceneStr" jdbcType="CHAR" />
     </resultMap>
     <sql id="Base_Column_List">
     id, create_time, ticket, expire_seconds, expires_in, url, type, code, card_id, openid,
-    unique_code, outer_id, errcode, errmsg, token_id
+    unique_code, outer_id, errcode, errmsg, token_id, scene_id, scene_str
   </sql>
 
     <select id="selectLastTicket" resultMap="BaseResultMap">
@@ -79,6 +81,12 @@
             <if test="tokenId != null" >
                 token_id,
             </if>
+            <if test="sceneId != null" >
+                scene_id,
+            </if>
+            <if test="sceneStr != null" >
+                scene_str,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -125,6 +133,12 @@
             </if>
             <if test="tokenId != null" >
                 #{tokenId,jdbcType=VARCHAR},
+            </if>
+            <if test="sceneId != null" >
+                #{sceneId,jdbcType=INTEGER},
+            </if>
+            <if test="sceneStr != null" >
+                #{sceneStr,jdbcType=CHAR},
             </if>
         </trim>
     </insert>

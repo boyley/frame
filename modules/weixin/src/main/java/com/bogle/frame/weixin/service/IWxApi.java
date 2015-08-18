@@ -14,6 +14,8 @@ import java.io.Serializable;
  */
 public interface IWxApi extends IWexinApiUrl {
 
+    String TOKEN_ID = "token_id=";
+
     /**
      * 在开发者首次提交验证申请时，微信服务器将发送GET请求到填写的URL上，
      * 并且带上四个参数（signature、timestamp、nonce、echostr），开发者通过对签名

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.weixin.persistence.TemplateMsgDataMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.TemplateMsgData">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="template_msg_id" property="templateMsgId" jdbcType="BIGINT"/>
+        <result column="key" property="key" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <result column="color" property="color" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, template_msg_id, key, value, color
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from wexin_template_msg_data
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from wexin_template_msg_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.bogle.frame.weixin.domain.TemplateMsgData">
+    insert into wexin_template_msg_data (id, template_msg_id, key, 
+      value, color)
+    values (#{id,jdbcType=BIGINT}, #{templateMsgId,jdbcType=BIGINT}, #{key,jdbcType=VARCHAR}, 
+      #{value,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.TemplateMsgData">
+        insert into wexin_template_msg_data
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="templateMsgId != null">
+                template_msg_id,
+            </if>
+            <if test="key != null">
+                key,
+            </if>
+            <if test="value != null">
+                value,
+            </if>
+            <if test="color != null">
+                color,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="templateMsgId != null">
+                #{templateMsgId,jdbcType=BIGINT},
+            </if>
+            <if test="key != null">
+                #{key,jdbcType=VARCHAR},
+            </if>
+            <if test="value != null">
+                #{value,jdbcType=VARCHAR},
+            </if>
+            <if test="color != null">
+                #{color,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insertBatch" parameterType="java.util.List">
+        insert into wexin_template_msg_data (template_msg_id, `key`,
+        value, color)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.templateMsgId,jdbcType=BIGINT}, #{item.key,jdbcType=VARCHAR},
+            #{item.value,jdbcType=VARCHAR}, #{item.color,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.TemplateMsgData">
+        update wexin_template_msg_data
+        <set>
+            <if test="templateMsgId != null">
+                template_msg_id = #{templateMsgId,jdbcType=BIGINT},
+            </if>
+            <if test="key != null">
+                key = #{key,jdbcType=VARCHAR},
+            </if>
+            <if test="value != null">
+                value = #{value,jdbcType=VARCHAR},
+            </if>
+            <if test="color != null">
+                color = #{color,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.bogle.frame.weixin.domain.TemplateMsgData">
+    update wexin_template_msg_data
+    set template_msg_id = #{templateMsgId,jdbcType=BIGINT},
+      key = #{key,jdbcType=VARCHAR},
+      value = #{value,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

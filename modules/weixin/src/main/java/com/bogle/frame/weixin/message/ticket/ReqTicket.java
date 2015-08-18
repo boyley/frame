@@ -3,6 +3,7 @@ package com.bogle.frame.weixin.message.ticket;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.bogle.frame.weixin.defines.ActionName;
 
+import javax.swing.*;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,10 @@ public class ReqTicket implements Serializable {
     private Integer expireSeconds;
     private Boolean uniqueCode;
 
+    private int sceneId;//场景值ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
+
+    private String sceneStr;//场景值ID（字符串形式的ID），字符串类型，长度限制为1到64，仅永久二维码支持此字段
+
 
     public ReqTicket(ActionName actionName, Serializable scene) {
         this.actionName = actionName;
@@ -39,16 +44,22 @@ public class ReqTicket implements Serializable {
             if (scene instanceof Integer) {
                 //临时二维码,永久二维码
                 scenet.put("scene_id", scene);
+                sceneId = (Integer) sceneId;
                 this.actionInfo = new HashMap<>();
                 this.actionInfo.put("scene", scenet);
             } else {
                 throw new RuntimeException(actionName + "不支持String类型的场景值");
             }
         } else if (actionName == ActionName.QR_LIMIT_STR_SCENE) {
-            //永久二维码，scene为String
-            scenet.put("scene_str", scene);
-            this.actionInfo = new HashMap<>();
-            this.actionInfo.put("scene", scenet);
+            if(scene instanceof String) {
+                //永久二维码，scene为String
+                scenet.put("scene_str", scene);
+                sceneStr = (String) scene;
+                this.actionInfo = new HashMap<>();
+                this.actionInfo.put("scene", scenet);
+            } else {
+                throw new RuntimeException(actionName + "只支持String类型的场景值");
+            }
         } else {
             throw new RuntimeException("不支持" + actionName + "ticket的创建");
         }
@@ -106,18 +117,33 @@ public class ReqTicket implements Serializable {
         this.actionInfo.put("card", card);
     }
 
+
     public Serializable generateScene() {
-        if (this.actionName == ActionName.QR_LIMIT_SCENE) {
-            Serializable secene = actionInfo.get("scene").get("scene_str");
+        Serializable secene = 0;
+        if (this.actionInfo == null) {
+            return 0;
+        }
+        if (this.actionName == ActionName.QR_CARD) {
+            //卡券投放
+            secene = actionInfo.get("card").get("outer_id");
+            return secene;
+        } else if (this.actionName == ActionName.QR_SCENE) {
+            //临时二维码
+            secene = actionInfo.get("scene").get("scene_id");
+            return secene;
+        } else if (this.actionName == ActionName.QR_LIMIT_SCENE) {
+            //永久二维码
+            secene = actionInfo.get("scene").get("scene_str");
             if (secene == null) {
                 secene = actionInfo.get("scene").get("scene_id");
             }
-            return secene;
-        } else if (this.actionName == ActionName.QR_CARD) {
-            Serializable secene = actionInfo.get("card").get("outer_id");
-            return secene;
+        } else if (this.actionName == ActionName.QR_LIMIT_STR_SCENE) {
+            //永久二维码
+            secene = actionInfo.get("scene").get("scene_str");
+            if (secene == null) {
+                secene = actionInfo.get("scene").get("scene_id");
+            }
         }
-        Serializable secene = actionInfo.get("scene").get("scene_id");
         return secene;
     }
 
@@ -190,5 +216,22 @@ public class ReqTicket implements Serializable {
     public void setUniqueCode(Boolean uniqueCode) {
         generateCard("is_unique_code", uniqueCode);
         this.uniqueCode = uniqueCode;
+    }
+
+    public int getSceneId() {
+        return sceneId;
+    }
+
+    public void setSceneId(int sceneId) {
+
+        this.sceneId = sceneId;
+    }
+
+    public String getSceneStr() {
+        return sceneStr;
+    }
+
+    public void setSceneStr(String sceneStr) {
+        this.sceneStr = sceneStr;
     }
 }

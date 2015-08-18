@@ -1,6 +1,7 @@
 package com.bogle.frame.weixin.aspect;
 
 import com.bogle.frame.weixin.defines.WxCode;
+import com.bogle.frame.weixin.event.WeixinEvent;
 import com.bogle.frame.weixin.exception.WeixinException;
 import com.bogle.frame.weixin.message.WxMsg;
 import org.aspectj.lang.JoinPoint;
@@ -8,6 +9,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,6 +21,9 @@ import org.springframework.stereotype.Component;
 public class WeixinAspect {
 
     private final static Logger log = LoggerFactory.getLogger(WeixinAspect.class);
+
+    @Autowired
+    private ApplicationEventPublisher publisher;
 
     @Pointcut("execution (* com.bogle.frame.weixin.component.Http.* (..)) ")
     public void aspect() {
@@ -51,9 +57,10 @@ public class WeixinAspect {
         //执行目标方法
         returnValue = joinPoint.proceed(args);
         if (returnValue instanceof WxMsg) {
+            publisher.publishEvent(new WeixinEvent(this,returnValue,args));
             WxMsg message = (WxMsg) returnValue;
             WxCode wxCode = handleException(message);
-            if(wxCode != wxCode.SUCCESS) {
+            if (wxCode != wxCode.SUCCESS) {
                 throw new WeixinException("微信错误消息：" + wxCode.getErrmsg(), wxCode);
             }
         }

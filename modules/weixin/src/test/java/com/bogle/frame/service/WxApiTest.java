@@ -53,6 +53,15 @@ public class WxApiTest {
     }
 
     /**
+     * 網頁授權token
+     */
+    @Test
+    public void getOauth2Token() throws WeixinException {
+        Token token = this.wxApi.getToken("abc");
+        println(token);
+    }
+
+    /**
      * jsapi ticket
      */
     @Test
@@ -100,7 +109,7 @@ public class WxApiTest {
      */
     @Test
     public void getQrTicketByQrLimitStrSceneTest() throws WeixinException {
-        ReqTicket reqTicket = new ReqTicket(ActionName.QR_LIMIT_STR_SCENE,1);
+        ReqTicket reqTicket = new ReqTicket(ActionName.QR_LIMIT_STR_SCENE,"1");
         Ticket ticket = this.wxApi.getTicket(reqTicket);
         println(ticket);
     }
@@ -110,7 +119,7 @@ public class WxApiTest {
      */
     @Test
     public void getQrTicketByQrLimitStrSceneBytesTest() throws WeixinException {
-        ReqTicket reqTicket = new ReqTicket(ActionName.QR_LIMIT_STR_SCENE,1);
+        ReqTicket reqTicket = new ReqTicket(ActionName.QR_LIMIT_STR_SCENE,"1");
         Qrcode qrcode = this.wxApi.getQrcode(reqTicket);
         pringln(qrcode.getBytes());
     }

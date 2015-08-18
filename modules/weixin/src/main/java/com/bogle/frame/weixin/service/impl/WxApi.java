@@ -143,14 +143,14 @@ public class WxApi implements IWxApi {
 
     /**
      * 1.微信JS接口的临时票据
-     * 2.二维码投放
+     * 2.添加卡券到卡券包ticket
      *
      * @param ticketType
      * @return
      */
     @Override
     public Ticket getTicket(TicketType ticketType) throws WeixinException {
-        com.bogle.frame.weixin.domain.Ticket result = null;
+        Ticket result = null;
         if (ticketType == TicketType.JSAPI_TICKET) {
             result = this.jsapiTicket; //微信JS接口的临时票据ticket
         } else if (ticketType == TicketType.JSAPI_CARD_TICKET) {
@@ -178,13 +178,13 @@ public class WxApi implements IWxApi {
         String url;
         if (ticketType == TicketType.JSAPI_TICKET) {
             Token token = this.getToken();
-            url = String.format(JSAPI_TICKET_API_URL, token.getAccessToken());
-            this.jsapiTicket =  http.httpGet(url,Ticket.class);
+            url = String.format(JSAPI_TICKET_API_URL, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
+            this.jsapiTicket = http.httpGet(url, Ticket.class);
             return this.jsapiTicket;
         } else if (ticketType == TicketType.JSAPI_CARD_TICKET) {
             Token token = this.getToken();
-            url = String.format(JSAPI_CARD_TICKET_URL_API_URL, token.getAccessToken());
-            this.cardTicket =  http.httpGet(url, Ticket.class);
+            url = String.format(JSAPI_CARD_TICKET_URL_API_URL, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
+            this.cardTicket = http.httpGet(url, Ticket.class);
             return this.cardTicket;
         }
         throw new RuntimeException("请检查你要获取的卡券类型");
@@ -195,6 +195,7 @@ public class WxApi implements IWxApi {
      * ticket获取
      * 1. 投放卡券二维码ticket
      * 2. 生成带参数的二维码ticket
+     *
      * @param reqTicket
      * @return
      */
@@ -202,23 +203,24 @@ public class WxApi implements IWxApi {
     public Ticket getTicket(ReqTicket reqTicket) throws WeixinException {
         ActionName actionName = reqTicket.getActionName();
         String url = null;
-        if(actionName == ActionName.QR_CARD) {
+        if (actionName == ActionName.QR_CARD) {
             //投放卡券二维码ticket
             url = CARD_TICKET_URL_API_URL;
-        } else if(actionName == ActionName.QR_SCENE || actionName == ActionName.QR_LIMIT_SCENE || actionName == ActionName.QR_LIMIT_STR_SCENE) {
+        } else if (actionName == ActionName.QR_SCENE || actionName == ActionName.QR_LIMIT_SCENE || actionName == ActionName.QR_LIMIT_STR_SCENE) {
             //生成带参数的二维码ticket ,QR_SCENE为临时;生成带参数的二维码ticket ,QR_LIMIT_SCENE永久;生成带参数的二维码ticket ,QR_LIMIT_STR_SCENE永久
             url = QRCODE_TICKET_URL_API_URL;
         }
-        if(url != null) {
+        if (url != null) {
             Token token = this.getToken();
-            url = String.format(url,token.getAccessToken());
-            return http.httpPost(url,reqTicket,Ticket.class);
+            url = String.format(url, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
+            return http.httpPost(url, reqTicket, Ticket.class);
         }
         throw new RuntimeException("获取ticket的action_name有误，请检查");
     }
 
     /**
      * 根据ticket获取二维码图片
+     *
      * @param reqTicket
      * @return
      */
@@ -234,6 +236,7 @@ public class WxApi implements IWxApi {
 
     /**
      * 网页授权获取用户基本信息
+     *
      * @param code
      * @return
      */
@@ -243,8 +246,8 @@ public class WxApi implements IWxApi {
         try {
             token = this.getToken(code);
         } catch (Exception e) {
-            if(e instanceof WeixinException) {
-                WeixinException ex = (WeixinException)e;
+            if (e instanceof WeixinException) {
+                WeixinException ex = (WeixinException) e;
                 OauthDefines oauthDefines = new OauthDefines(ex.getErrcode());
                 if (log.isErrorEnabled()) {
                     log.info("网页授权错误:{}", JSON.toJSONString(oauthDefines));
@@ -265,18 +268,19 @@ public class WxApi implements IWxApi {
 
     @Override
     public Fans getFans(String url) throws WeixinException {
-        return http.httpGet(url,Fans.class);
+        return http.httpGet(url, Fans.class);
     }
 
     @Override
     public Template send(TemplateMsg templateMsg) throws WeixinException {
         Token token = this.getToken();
-        String url = String.format(SEND_TEMPLATE_MSG_URL,token.getAccessToken());
-        return http.httpPost(url,templateMsg,Template.class);
+        String url = String.format(SEND_TEMPLATE_MSG_URL, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
+        return http.httpPost(url, templateMsg, Template.class);
     }
 
     /**
      * 接收处理消息
+     *
      * @param reqMsg
      * @return
      */
@@ -289,6 +293,7 @@ public class WxApi implements IWxApi {
 
     /**
      * 处理消息
+     *
      * @param message
      * @return
      */
@@ -366,4 +371,5 @@ public class WxApi implements IWxApi {
         }
         return xml;
     }
+
 }

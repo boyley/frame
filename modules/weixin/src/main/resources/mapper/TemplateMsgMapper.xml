@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.weixin.persistence.TemplateMsgMapper">
+    <resultMap id="BaseResultMap" type="com.bogle.frame.weixin.domain.TemplateMsg">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="token_id" property="tokenId" jdbcType="VARCHAR"/>
+        <result column="touser" property="touser" jdbcType="VARCHAR"/>
+        <result column="template_id" property="templateId" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="topcolor" property="topcolor" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, create_time, token_id, touser, template_id, url, topcolor
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from wexin_template_msg
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from wexin_template_msg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.bogle.frame.weixin.domain.TemplateMsg">
+    insert into wexin_template_msg (id, create_time, token_id, 
+      touser, template_id, url, 
+      topcolor)
+    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=BIGINT}, #{tokenId,jdbcType=VARCHAR}, 
+      #{touser,jdbcType=VARCHAR}, #{templateId,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{topcolor,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.bogle.frame.weixin.domain.TemplateMsg" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into wexin_template_msg
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="tokenId != null">
+                token_id,
+            </if>
+            <if test="touser != null">
+                touser,
+            </if>
+            <if test="templateId != null">
+                template_id,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="topcolor != null">
+                topcolor,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="tokenId != null">
+                #{tokenId,jdbcType=VARCHAR},
+            </if>
+            <if test="touser != null">
+                #{touser,jdbcType=VARCHAR},
+            </if>
+            <if test="templateId != null">
+                #{templateId,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="topcolor != null">
+                #{topcolor,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.weixin.domain.TemplateMsg">
+        update wexin_template_msg
+        <set>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=BIGINT},
+            </if>
+            <if test="tokenId != null">
+                token_id = #{tokenId,jdbcType=VARCHAR},
+            </if>
+            <if test="touser != null">
+                touser = #{touser,jdbcType=VARCHAR},
+            </if>
+            <if test="templateId != null">
+                template_id = #{templateId,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="topcolor != null">
+                topcolor = #{topcolor,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.bogle.frame.weixin.domain.TemplateMsg">
+    update wexin_template_msg
+    set create_time = #{createTime,jdbcType=BIGINT},
+      token_id = #{tokenId,jdbcType=VARCHAR},
+      touser = #{touser,jdbcType=VARCHAR},
+      template_id = #{templateId,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      topcolor = #{topcolor,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
