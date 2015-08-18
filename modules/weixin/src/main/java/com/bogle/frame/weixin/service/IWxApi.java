@@ -8,6 +8,7 @@ import com.bogle.frame.weixin.message.template.TemplateMsg;
 import com.bogle.frame.weixin.message.ticket.ReqTicket;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/8/17.
@@ -35,6 +36,14 @@ public interface IWxApi extends IWexinApiUrl {
      */
     boolean checkSignature(String signature, String timestamp,
                            String nonce, String echostr);
+
+    /**
+     * 微信页面config接入
+     *
+     * @param url
+     * @return
+     */
+    Map<String, String> signature(final String url) throws WeixinException;
 
     /**
      * 获取基础交互的access_token信息

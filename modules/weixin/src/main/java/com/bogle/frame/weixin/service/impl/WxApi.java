@@ -29,6 +29,9 @@ import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2015/8/17.
@@ -105,6 +108,30 @@ public class WxApi implements IWxApi {
         boolean flag = tmpStr != null ? tmpStr.equals(signature) : false;
         log.info("验证消息真实性 signature:" + signature + ",timestamp:" + timestamp + ",nonce:" + nonce + ",echostr:" + echostr + ",验证结果字符串：" + tmpStr + ",返回结果：" + flag);
         return flag;
+    }
+
+    /**
+     * JS-SDK使用权限签名算法
+     * @param url
+     * @return
+     * @throws WeixinException
+     */
+    @Override
+    public Map<String, String> signature(String url) throws WeixinException {
+        Map<String, String> ret = new HashMap<>();
+        Ticket ticket = this.getTicket(TicketType.JSAPI_TICKET);
+        String nonceStr = this.createNonceStr();
+        String timestamp = this.createTimestamp();
+        String sign = "jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s";
+        String signature = String.format(sign, ticket.getTicket(), nonceStr, timestamp, url);
+        signature = DigestUtils.sha1Hex(signature);
+        ret.put("url", url);
+        ret.put("jsapi_ticket", ticket.getTicket());
+        ret.put("nonceStr", nonceStr);
+        ret.put("timestamp", timestamp);
+        ret.put("signature", signature);
+        ret.put("appId", weixinConfiguration.getAppId());
+        return ret;
     }
 
     /**
@@ -377,4 +404,12 @@ public class WxApi implements IWxApi {
         return xml;
     }
 
+
+    private String createNonceStr() {
+        return UUID.randomUUID().toString();
+    }
+
+    private String createTimestamp() {
+        return Long.toString(System.currentTimeMillis() / 1000);
+    }
 }

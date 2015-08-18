@@ -6,6 +6,8 @@ package com.bogle.frame.weixin.service;
  */
 public interface IWexinApiUrl {
 
+
+
     /**
      * 基础access_token
      * grant_type	是	获取access_token填写client_credential
