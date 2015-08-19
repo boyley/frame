@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="cms" />
         <module name="common" />
+        <module name="emay-sms" />
         <module name="static-file" />
         <module name="sys-admin" />
         <module name="sys-config" />
@@ -35,6 +36,7 @@
     <bytecodeTargetLevel>
       <module name="cms" target="1.8" />
       <module name="common" target="1.8" />
+      <module name="emay-sms" target="1.8" />
       <module name="frame" target="1.8" />
       <module name="modules" target="1.8" />
       <module name="standard" target="1.8" />
