@@ -1,7 +1,5 @@
 package com.bogle.frame.sms.domain;
 
-import java.util.Date;
-
 public class Log {
     private Long id;
 
@@ -21,7 +19,7 @@ public class Log {
 
     private String thing;
 
-    private Date createTime;
+    private Long createTime;
 
     public Log() {
     }
@@ -109,11 +107,11 @@ public class Log {
         this.thing = thing == null ? null : thing.trim();
     }
 
-    public Date getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 }

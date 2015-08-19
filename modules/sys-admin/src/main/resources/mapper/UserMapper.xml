@@ -101,7 +101,7 @@
       enabled, register_time)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{accountNonExpired,jdbcType=BIT}, #{accountNonLocked,jdbcType=BIT}, #{credentialsNonExpire,jdbcType=BIT}, 
-      #{enabled,jdbcType=BIT}, #{registerTime,jdbcType=TIMESTAMP})
+      #{enabled,jdbcType=BIT}, #{registerTime,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.admin.domain.User"  useGeneratedKeys="true"
           keyProperty="id">
@@ -155,7 +155,7 @@
         #{enabled,jdbcType=BIT},
       </if>
       <if test="registerTime != null" >
-        #{registerTime,jdbcType=TIMESTAMP},
+        #{registerTime,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -181,7 +181,7 @@
         enabled = #{enabled,jdbcType=BIT},
       </if>
       <if test="registerTime != null" >
-        register_time = #{registerTime,jdbcType=TIMESTAMP},
+        register_time = #{registerTime,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -194,7 +194,7 @@
       account_non_locked = #{accountNonLocked,jdbcType=BIT},
       credentials_non_expire = #{credentialsNonExpire,jdbcType=BIT},
       enabled = #{enabled,jdbcType=BIT},
-      register_time = #{registerTime,jdbcType=TIMESTAMP}
+      register_time = #{registerTime,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

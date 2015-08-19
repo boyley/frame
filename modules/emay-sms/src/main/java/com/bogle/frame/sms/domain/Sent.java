@@ -1,13 +1,11 @@
 package com.bogle.frame.sms.domain;
 
-import java.util.Date;
-
 public class Sent {
     private Long id;
 
     private Long smsTaskId;
 
-    private Date sendTime;
+    private Long sendTime;
 
     private Long smsLogId;
 
@@ -27,11 +25,11 @@ public class Sent {
         this.smsTaskId = smsTaskId;
     }
 
-    public Date getSendTime() {
+    public Long getSendTime() {
         return sendTime;
     }
 
-    public void setSendTime(Date sendTime) {
+    public void setSendTime(Long sendTime) {
         this.sendTime = sendTime;
     }
 

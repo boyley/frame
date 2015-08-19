@@ -1,7 +1,5 @@
 package com.bogle.frame.sms.domain;
 
-import java.util.Date;
-
 public class RegisterInfo {
     private Long id;
 
@@ -23,7 +21,7 @@ public class RegisterInfo {
 
     private String postcode;
 
-    private Date registerTime;
+    private Long registerTime;
 
     private Long logId;
 
@@ -120,11 +118,11 @@ public class RegisterInfo {
         this.postcode = postcode == null ? null : postcode.trim();
     }
 
-    public Date getRegisterTime() {
+    public Long getRegisterTime() {
         return registerTime;
     }
 
-    public void setRegisterTime(Date registerTime) {
+    public void setRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
     }
 

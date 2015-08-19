@@ -9,7 +9,7 @@ public class ChargeLog {
 
     private String cardPass;
 
-    private Date createTime;
+    private Long createTime;
 
     private Long logId;
 
@@ -46,11 +46,11 @@ public class ChargeLog {
         this.cardPass = cardPass == null ? null : cardPass.trim();
     }
 
-    public Date getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

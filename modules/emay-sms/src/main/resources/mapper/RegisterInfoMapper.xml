@@ -12,7 +12,7 @@
     <result column="fax" property="fax" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="postcode" property="postcode" jdbcType="VARCHAR" />
-    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+    <result column="register_time" property="registerTime" jdbcType="BIGINT" />
     <result column="log_id" property="logId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -40,7 +40,7 @@
     values (#{softwareSerialNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{linkMan,jdbcType=VARCHAR}, 
       #{phoneNum,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{fax,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
-      #{registerTime,jdbcType=TIMESTAMP}, #{logId,jdbcType=BIGINT})
+      #{registerTime,jdbcType=BIGINT}, #{logId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.RegisterInfo" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
@@ -111,7 +111,7 @@
         #{postcode,jdbcType=VARCHAR},
       </if>
       <if test="registerTime != null" >
-        #{registerTime,jdbcType=TIMESTAMP},
+        #{registerTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         #{logId,jdbcType=BIGINT},
@@ -149,7 +149,7 @@
         postcode = #{postcode,jdbcType=VARCHAR},
       </if>
       <if test="registerTime != null" >
-        register_time = #{registerTime,jdbcType=TIMESTAMP},
+        register_time = #{registerTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         log_id = #{logId,jdbcType=BIGINT},
@@ -168,7 +168,7 @@
       fax = #{fax,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       postcode = #{postcode,jdbcType=VARCHAR},
-      register_time = #{registerTime,jdbcType=TIMESTAMP},
+      register_time = #{registerTime,jdbcType=BIGINT},
       log_id = #{logId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

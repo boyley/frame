@@ -11,7 +11,7 @@
     <result column="err_source" property="errSource" jdbcType="VARCHAR" />
     <result column="err_msg" property="errMsg" jdbcType="VARCHAR" />
     <result column="thing" property="thing" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, software_serial_no, target, invoke, argus, code, err_source, err_msg, thing, 
@@ -37,7 +37,7 @@
       )
     values (#{softwareSerialNo,jdbcType=VARCHAR}, #{target,jdbcType=VARCHAR}, #{invoke,jdbcType=VARCHAR}, 
       #{argus,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{errSource,jdbcType=VARCHAR}, 
-      #{errMsg,jdbcType=VARCHAR}, #{thing,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      #{errMsg,jdbcType=VARCHAR}, #{thing,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Log" >
@@ -100,7 +100,7 @@
         #{thing,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -132,7 +132,7 @@
         thing = #{thing,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -147,7 +147,7 @@
       err_source = #{errSource,jdbcType=VARCHAR},
       err_msg = #{errMsg,jdbcType=VARCHAR},
       thing = #{thing,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

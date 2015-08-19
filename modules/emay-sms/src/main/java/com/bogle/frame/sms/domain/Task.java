@@ -7,11 +7,11 @@ import java.util.Date;
 public class Task {
     private Long id;
 
-    private Date createTime;
+    private Long createTime;
 
     private SendVariable sendStatus;
 
-    private Date expireTime;
+    private Long expireTime;
 
     private Long smsId;
 
@@ -53,11 +53,11 @@ public class Task {
         this.id = id;
     }
 
-    public Date getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
@@ -69,11 +69,11 @@ public class Task {
         this.sendStatus = sendStatus;
     }
 
-    public Date getExpireTime() {
+    public Long getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(Date expireTime) {
+    public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
 

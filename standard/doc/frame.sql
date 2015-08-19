@@ -188,7 +188,7 @@ CREATE TABLE `sys_user` (
   `account_non_locked` bit(1) DEFAULT NULL COMMENT '账号是否未被锁定',
   `credentials_non_expire` bit(1) DEFAULT NULL COMMENT '凭证是否为过期',
   `enabled` bit(1) DEFAULT NULL COMMENT '账号是否可用',
-  `register_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '注册日期',
+  `register_time` bigint(20) DEFAULT NULL COMMENT '注册日期',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
@@ -242,7 +242,7 @@ CREATE TABLE `weixin_fans` (
   `province` varchar(64) DEFAULT NULL COMMENT '用户所在省份',
   `language` varchar(64) DEFAULT NULL COMMENT '用户的语言',
   `headimgurl` varchar(256) DEFAULT NULL COMMENT '用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。',
-  `subscribe_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '用户关注时间，为时间戳。如果用户曾多次关注，则取最后关注时间',
+  `subscribe_time` bigint(20) DEFAULT NULL COMMENT '用户关注时间，为时间戳。如果用户曾多次关注，则取最后关注时间',
   `unionid` varchar(64) DEFAULT NULL COMMENT '只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段',
   `remark` varchar(200) DEFAULT NULL COMMENT '公众号运营者对粉丝的备注，公众号运营者可在微信公众平台用户管理界面对粉丝添加备注',
   `groupid` int(11) DEFAULT NULL COMMENT '用户所在的分组ID',

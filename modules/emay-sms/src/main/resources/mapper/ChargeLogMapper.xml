@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="cardNo" property="cardno" jdbcType="VARCHAR" />
     <result column="card_pass" property="cardPass" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
     <result column="log_id" property="logId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -27,7 +27,7 @@
     </selectKey>
     insert into sms_charge_log (cardNo, card_pass, create_time, 
       log_id)
-    values (#{cardno,jdbcType=VARCHAR}, #{cardPass,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{cardno,jdbcType=VARCHAR}, #{cardPass,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, 
       #{logId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.ChargeLog" >
@@ -57,7 +57,7 @@
         #{cardPass,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         #{logId,jdbcType=BIGINT},
@@ -74,7 +74,7 @@
         card_pass = #{cardPass,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         log_id = #{logId,jdbcType=BIGINT},
@@ -86,7 +86,7 @@
     update sms_charge_log
     set cardNo = #{cardno,jdbcType=VARCHAR},
       card_pass = #{cardPass,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=BIGINT},
       log_id = #{logId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

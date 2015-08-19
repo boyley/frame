@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Sent" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="sms_task_id" property="smsTaskId" jdbcType="BIGINT" />
-    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="send_time" property="sendTime" jdbcType="BIGINT" />
     <result column="sms_log_id" property="smsLogId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -26,7 +26,7 @@
     </selectKey>
     insert into sms_sent (sms_task_id, send_time, sms_log_id
       )
-    values (#{smsTaskId,jdbcType=BIGINT}, #{sendTime,jdbcType=TIMESTAMP}, #{smsLogId,jdbcType=BIGINT}
+    values (#{smsTaskId,jdbcType=BIGINT}, #{sendTime,jdbcType=BIGINT}, #{smsLogId,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Sent" >
@@ -50,7 +50,7 @@
         #{smsTaskId,jdbcType=BIGINT},
       </if>
       <if test="sendTime != null" >
-        #{sendTime,jdbcType=TIMESTAMP},
+        #{sendTime,jdbcType=BIGINT},
       </if>
       <if test="smsLogId != null" >
         #{smsLogId,jdbcType=BIGINT},
@@ -64,7 +64,7 @@
         sms_task_id = #{smsTaskId,jdbcType=BIGINT},
       </if>
       <if test="sendTime != null" >
-        send_time = #{sendTime,jdbcType=TIMESTAMP},
+        send_time = #{sendTime,jdbcType=BIGINT},
       </if>
       <if test="smsLogId != null" >
         sms_log_id = #{smsLogId,jdbcType=BIGINT},
@@ -75,7 +75,7 @@
   <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Sent" >
     update sms_sent
     set sms_task_id = #{smsTaskId,jdbcType=BIGINT},
-      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      send_time = #{sendTime,jdbcType=BIGINT},
       sms_log_id = #{smsLogId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

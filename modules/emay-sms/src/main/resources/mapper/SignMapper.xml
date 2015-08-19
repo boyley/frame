@@ -7,7 +7,7 @@
     <result column="pwd" property="pwd" jdbcType="VARCHAR" />
     <result column="special_no" property="specialNo" jdbcType="VARCHAR" />
     <result column="key" property="key" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
     <result column="log_id" property="logId" jdbcType="BIGINT" />
   </resultMap>
 
@@ -71,7 +71,7 @@
       key, create_time, log_id
       )
     values (#{softwareSerialNo,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{specialNo,jdbcType=VARCHAR}, 
-      #{key,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{logId,jdbcType=BIGINT}
+      #{key,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, #{logId,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Sign" >
@@ -113,7 +113,7 @@
         #{key,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         #{logId,jdbcType=BIGINT},
@@ -136,7 +136,7 @@
         key = #{key,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=BIGINT},
       </if>
       <if test="logId != null" >
         log_id = #{logId,jdbcType=BIGINT},
@@ -150,7 +150,7 @@
       pwd = #{pwd,jdbcType=VARCHAR},
       special_no = #{specialNo,jdbcType=VARCHAR},
       key = #{key,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=BIGINT},
       log_id = #{logId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

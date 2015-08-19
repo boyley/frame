@@ -13,7 +13,7 @@ public class Sign {
 
     private String key;
 
-    private Date createTime;
+    private Long createTime;
 
     private Long logId;
 
@@ -76,11 +76,11 @@ public class Sign {
         this.key = key == null ? null : key.trim();
     }
 
-    public Date getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

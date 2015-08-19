@@ -34,7 +34,7 @@ CREATE TABLE `sms_charge_log` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `cardNo` varchar(100) DEFAULT NULL COMMENT '充值卡号',
   `card_pass` varchar(100) DEFAULT NULL COMMENT '充值卡密码',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间',
+  `create_time` bigint(20) DEFAULT NULL COMMENT '操作时间',
   `log_id` bigint(20) DEFAULT NULL COMMENT '充值log',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='短信充值记录';
@@ -53,7 +53,7 @@ CREATE TABLE `sms_log` (
   `err_source` varchar(100) DEFAULT NULL COMMENT '错误侧',
   `err_msg` varchar(100) DEFAULT NULL COMMENT '错误描述',
   `thing` varchar(100) DEFAULT NULL COMMENT '短信执行动作enum',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_time` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COMMENT='短信记录';
 
@@ -72,7 +72,7 @@ CREATE TABLE `sms_register_info` (
   `fax` varchar(20) DEFAULT NULL COMMENT '联系传真',
   `address` varchar(60) DEFAULT NULL COMMENT '公司地址',
   `postcode` varchar(20) DEFAULT NULL COMMENT '邮政编码',
-  `register_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '注册时间',
+  `register_time` bigint(20) DEFAULT NULL COMMENT '注册时间',
   `log_id` bigint(20) DEFAULT NULL COMMENT 'sms日志记录',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='注册企业信息';
@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `sms_sent`;
 CREATE TABLE `sms_sent` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `sms_task_id` bigint(20) DEFAULT NULL COMMENT '待发送短信id',
-  `send_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
+  `send_time` bigint(20) DEFAULT NULL COMMENT '发送时间',
   `sms_log_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='已发短信';
@@ -99,7 +99,7 @@ CREATE TABLE `sms_sign` (
   `pwd` varchar(100) DEFAULT NULL COMMENT '密码',
   `special_no` varchar(100) DEFAULT NULL COMMENT '特服号',
   `key` varchar(100) DEFAULT NULL COMMENT '要注册的关键字',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间',
+  `create_time` bigint(20) DEFAULT NULL COMMENT '操作时间',
   `log_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='短信客服端注册信息';
@@ -112,9 +112,9 @@ CREATE TABLE `sms_task` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `mobiles` text COMMENT '手机号码',
   `content` text COMMENT '短信内容',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_time` bigint(20) DEFAULT NULL COMMENT '创建时间',
   `send_status` varchar(10) DEFAULT NULL COMMENT '发送状态,W:未发送，Z:正在发送',
-  `expire_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '过期时间',
+  `expire_time` bigint(20) DEFAULT NULL COMMENT '过期时间',
   `sms_id` bigint(20) DEFAULT NULL COMMENT '短信自定义id',
   `log_id` bigint(20) DEFAULT NULL COMMENT '短信记录id',
   PRIMARY KEY (`id`)

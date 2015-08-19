@@ -3,9 +3,9 @@
 <mapper namespace="com.bogle.frame.sms.persistence.TaskMapper" >
   <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Task" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
     <result column="send_status" property="sendStatus" jdbcType="VARCHAR" />
-    <result column="expire_time" property="expireTime" jdbcType="TIMESTAMP" />
+    <result column="expire_time" property="expireTime" jdbcType="BIGINT" />
     <result column="sms_id" property="smsId" jdbcType="BIGINT" />
     <result column="log_id" property="logId" jdbcType="BIGINT" />
     <result column="mobiles" property="mobiles" jdbcType="LONGVARCHAR" />
@@ -31,7 +31,7 @@
     insert into sms_task (create_time, send_status, expire_time,
     sms_id, log_id, mobiles,
     content)
-    values (#{createTime,jdbcType=TIMESTAMP}, #{sendStatus,jdbcType=VARCHAR}, #{expireTime,jdbcType=TIMESTAMP},
+    values (#{createTime,jdbcType=BIGINT}, #{sendStatus,jdbcType=VARCHAR}, #{expireTime,jdbcType=BIGINT},
     #{smsId,jdbcType=BIGINT}, #{logId,jdbcType=BIGINT}, #{mobiles,jdbcType=LONGVARCHAR},
     #{content,jdbcType=LONGVARCHAR})
   </insert>
@@ -65,13 +65,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=BIGINT},
       </if>
       <if test="sendStatus != null" >
         #{sendStatus,jdbcType=VARCHAR},
       </if>
       <if test="expireTime != null" >
-        #{expireTime,jdbcType=TIMESTAMP},
+        #{expireTime,jdbcType=BIGINT},
       </if>
       <if test="smsId != null" >
         #{smsId,jdbcType=BIGINT},
@@ -91,13 +91,13 @@
     update sms_task
     <set >
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=BIGINT},
       </if>
       <if test="sendStatus != null" >
         send_status = #{sendStatus,jdbcType=VARCHAR},
       </if>
       <if test="expireTime != null" >
-        expire_time = #{expireTime,jdbcType=TIMESTAMP},
+        expire_time = #{expireTime,jdbcType=BIGINT},
       </if>
       <if test="smsId != null" >
         sms_id = #{smsId,jdbcType=BIGINT},
@@ -117,9 +117,9 @@
 
   <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Task" >
    update sms_task
-    set create_time = #{createTime,jdbcType=TIMESTAMP},
+    set create_time = #{createTime,jdbcType=BIGINT},
     send_status = #{sendStatus,jdbcType=VARCHAR},
-    expire_time = #{expireTime,jdbcType=TIMESTAMP},
+    expire_time = #{expireTime,jdbcType=BIGINT},
     sms_id = #{smsId,jdbcType=BIGINT},
     log_id = #{logId,jdbcType=BIGINT},
     mobiles = #{mobiles,jdbcType=LONGVARCHAR},
