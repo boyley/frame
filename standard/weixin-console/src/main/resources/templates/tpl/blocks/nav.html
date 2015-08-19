@@ -1,0 +1,222 @@
+<!-- list -->
+<ul class="nav">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.HEADER">Navigation</span>
+    </li>
+    <li>
+        <a href='' class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+            <span class="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href=''>
+                    <span translate="aside.nav.DASHBOARD">Dashboard</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard-v1">
+                    <span>Dashboard v1</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard-v2">
+                    <b class="label bg-info pull-right">N</b>
+                    <span>Dashboard v2</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="app.menu">
+            <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+            <span class="font-bold" translate="aside.nav.CALENDAR">Menu</span>
+        </a>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="home">
+            <b class="badge bg-info pull-right">9</b>
+            <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+            <span class="font-bold" translate="aside.nav.EMAIL">home</span>
+        </a>
+    </li>
+    <li>
+        <a href='' class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <i class="glyphicon glyphicon-th-large icon text-success"></i>
+            <span class="font-bold">Apps</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href=''>
+                    <span>Apps</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.todo">
+                    <span>Todo</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="apps.note">
+                    <span>Note</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="apps.contact">
+                    <span>Contacts</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.weather">
+                    <span>Weather</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="line dk"></li>
+
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.components.COMPONENTS">Components</span>
+    </li>
+    <li>
+        <a href='' class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <b class="badge bg-info pull-right">3</b>
+            <i class="glyphicon glyphicon-th"></i>
+            <span>Layout</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href=''>
+                    <span>Layout</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="layout.app">
+                    <span>Application</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="layout.fullwidth">
+                    <span>Full width</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="layout.mobile">
+                    <span>Mobile</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ng-class="{active:$state.includes('app.ui')}">
+        <a href='' class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href=''>
+                    <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.buttons">
+                    <span translate="aside.nav.components.ui_kits.BUTTONS">Buttons</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.icons">
+                    <b class="badge bg-info pull-right">3</b>
+                    <span translate="aside.nav.components.ui_kits.ICONS">Icons</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.grid">
+                    <span translate="aside.nav.components.ui_kits.GRID">Grid</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.widgets">
+                    <b class="badge bg-success pull-right">13</b>
+                    <span translate="aside.nav.WIDGETS">Widgets</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.bootstrap">
+                    <b class="badge bg-primary pull-right">16</b>
+                    <span translate="aside.nav.components.ui_kits.BOOTSTRAP">Bootstrap</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.sortable">
+                    <span translate="aside.nav.components.ui_kits.SORTABLE">Sortable</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.scroll">
+                    <span>Scroll</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.portlet">
+                    <span translate="aside.nav.components.ui_kits.PORTLET">Portlet</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.timeline">
+                    <span translate="aside.nav.components.ui_kits.TIMELINE">Timeline</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.tree">
+                    <span>Tree</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.toaster">
+                    <span>Toaster</span>
+                </a>
+            </li>
+            <li>
+                <a href='' class="auto">
+              <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+              </span>
+                    <b class="label bg-info pull-right">2</b>
+                    <span>Maps</span>
+                </a>
+                <ul class="nav dker">
+                    <li ui-sref-active="active">
+                        <a ui-sref="app.ui.jvectormap">
+                            <span translate="aside.nav.components.ui_kits.VECTOR_MAP">Vector Map</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="app.ui.googlemap">
+                            <span>Google Map</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<!-- / list -->

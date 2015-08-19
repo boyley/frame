@@ -19,6 +19,16 @@ public interface IWxApi extends IWexinApiUrl {
     String TOKEN_ID = "token_id=";
 
     /**
+     * 网页授权获取用户基本信息
+     * appid:公众号的唯一标识
+     * redirect_uri:授权后重定向的回调链接地址，请使用urlencode对链接进行处理
+     * code:返回类型，请填写code,改code由微信生成
+     * scope:应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在未关注的情况下，只要用户授权，也能获取其信息）
+     * state:重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节
+     */
+    String SNSAPI = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect";
+
+    /**
      * 在开发者首次提交验证申请时，微信服务器将发送GET请求到填写的URL上，
      * 并且带上四个参数（signature、timestamp、nonce、echostr），开发者通过对签名
      * （即signature）的效验，来判断此条消息的真实性。此后，每次开发者接收用户消息的时候，
@@ -44,7 +54,7 @@ public interface IWxApi extends IWexinApiUrl {
      * @param url
      * @return
      */
-    Map<String, String> signature(final String url) throws WeixinException;
+    Map<String, String> signature(final String url);
 
     /**
      * 获取基础交互的access_token信息
@@ -96,6 +106,15 @@ public interface IWxApi extends IWexinApiUrl {
      * @return
      */
     OauthDefines oauth2(String code);
+
+    /**
+     * 根据url生成授权的url
+     *
+     * @param url
+     * @param state
+     * @return
+     */
+    String generateOauth2Url(String url, String state);
 
     /**
      * 获取用户信息

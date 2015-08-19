@@ -17,6 +17,7 @@
         <module>sys-config</module>
         <module>sys-admin</module>
         <module>weixin</module>
+        <module>static-file</module>
     </modules>
 
     <properties>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <script type="application/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{http://res.wx.qq.com/open/js/jweixin-1.0.0.js}" type="text/javascript"></script>
+    <script type="application/javascript" th:inline="javascript">
+        wx.config({
+            debug: true,
+            appId: [[${signature.appId}]],
+            timestamp: [[${signature.timestamp}]],
+            nonceStr: [[${signature.nonceStr}]],
+            signature: [[${signature.signature}]],
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem',
+                'translateVoice',
+                'startRecord',
+                'stopRecord',
+                'onRecordEnd',
+                'playVoice',
+                'pauseVoice',
+                'stopVoice',
+                'uploadVoice',
+                'downloadVoice',
+                'chooseImage',
+                'previewImage',
+                'uploadImage',
+                'downloadImage',
+                'getNetworkType',
+                'openLocation',
+                'getLocation',
+                'hideOptionMenu',
+                'showOptionMenu',
+                'closeWindow',
+                'scanQRCode',
+                'chooseWXPay',
+                'openProductSpecificView',
+                'addCard',
+                'chooseCard',
+                'openCard'
+            ]
+        });
+
+        wx.ready(function () {
+            var shareData = {
+                title: '分利宝招聘信息',
+                link: [[${link}]],
+                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                desc: '分利宝招聘信息',
+                success: function () {
+                    alert("分享成功")
+                }
+            };
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareAppMessage(shareData);
+
+        });
+
+        wx.error(function (res) {
+            alert(res.errMsg);
+        });
+    </script>
+</head>
+<body>
+<h1>abc</h1>
+</body>
+</html>

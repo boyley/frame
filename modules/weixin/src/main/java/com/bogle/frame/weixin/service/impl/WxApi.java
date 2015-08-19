@@ -118,9 +118,14 @@ public class WxApi implements IWxApi {
      * @throws WeixinException
      */
     @Override
-    public Map<String, String> signature(String url) throws WeixinException {
+    public Map<String, String> signature(String url) {
         Map<String, String> ret = new HashMap<>();
-        Ticket ticket = this.getTicket(TicketType.JSAPI_TICKET);
+        Ticket ticket = null;
+        try {
+            ticket = this.getTicket(TicketType.JSAPI_TICKET);
+        } catch (WeixinException e) {
+            e.printStackTrace();
+        }
         String nonceStr = this.createNonceStr();
         String timestamp = this.createTimestamp();
         String sign = "jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s";
@@ -296,6 +301,12 @@ public class WxApi implements IWxApi {
         }
         OauthDefines oauthDefines = new OauthDefines(WxCode.ERROR);
         return oauthDefines;
+    }
+
+    @Override
+    public String generateOauth2Url(String url, String state) {
+        url = encoder.encode(url);
+        return String.format(SNSAPI,weixinConfiguration.getAppId(),url,OauthType.snsapi_userinfo,state);
     }
 
     @Override
