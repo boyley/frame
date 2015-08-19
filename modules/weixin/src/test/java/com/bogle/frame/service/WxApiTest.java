@@ -4,13 +4,16 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.bogle.frame.Application;
 import com.bogle.frame.weixin.defines.ActionName;
+import com.bogle.frame.weixin.defines.MenuType;
 import com.bogle.frame.weixin.defines.OauthDefines;
 import com.bogle.frame.weixin.defines.TicketType;
 import com.bogle.frame.weixin.domain.Qrcode;
 import com.bogle.frame.weixin.domain.Ticket;
 import com.bogle.frame.weixin.exception.WeixinException;
+import com.bogle.frame.weixin.message.Button;
 import com.bogle.frame.weixin.message.Template;
 import com.bogle.frame.weixin.message.Token;
+import com.bogle.frame.weixin.message.WxMsg;
 import com.bogle.frame.weixin.message.template.TemplateMsg;
 import com.bogle.frame.weixin.message.template.TemplateMsgData;
 import com.bogle.frame.weixin.message.ticket.ReqTicket;
@@ -27,9 +30,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Administrator on 2015/8/17.
@@ -167,6 +168,39 @@ public class WxApiTest {
 
         templateMsg.setData(data);
         Template template = this.wxApi.send(templateMsg);
+    }
+
+    @Test
+    public void customMenuTest() throws WeixinException {
+        Button btn1 = new Button();
+        btn1.setName("今日歌曲");
+        btn1.setType(MenuType.click);
+        btn1.setKey("V1001_TODAY_MUSIC");
+
+
+        Button btn2 = new Button();
+        btn2.setName("菜单");
+
+        Button sub1 = new Button();
+        sub1.setName("搜索");
+        sub1.setType(MenuType.view);
+        sub1.setUrl("http://www.soso.com/");
+
+        Button sub2 = new Button();
+        sub2.setName("视频");
+        sub2.setType(MenuType.view);
+        sub2.setUrl("http://v.qq.com/");
+
+        Button sub3 = new Button();
+        sub3.setName("赞一下我们");
+        sub3.setType(MenuType.click);
+        sub3.setKey("V1001_GOOD");
+
+        btn2.setSubButton(Arrays.asList(new Button[]{sub1, sub2, sub3}));
+
+        List<Button> buttons = Arrays.asList(btn1, btn2);
+        WxMsg msg = this.wxApi.customMenu(buttons);
+        println(msg);
     }
 
     private void println(Object target) {

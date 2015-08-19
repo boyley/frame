@@ -1,6 +1,7 @@
 package com.bogle.frame.weixin.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.bogle.frame.weixin.component.Http;
 import com.bogle.frame.weixin.config.WeixinConfiguration;
 import com.bogle.frame.weixin.defines.*;
@@ -10,8 +11,10 @@ import com.bogle.frame.weixin.domain.Ticket;
 import com.bogle.frame.weixin.domain.Token;
 import com.bogle.frame.weixin.event.MessageEvent;
 import com.bogle.frame.weixin.exception.WeixinException;
+import com.bogle.frame.weixin.message.Button;
 import com.bogle.frame.weixin.message.Message;
 import com.bogle.frame.weixin.message.Template;
+import com.bogle.frame.weixin.message.WxMsg;
 import com.bogle.frame.weixin.message.template.TemplateMsg;
 import com.bogle.frame.weixin.message.ticket.ReqTicket;
 import com.bogle.frame.weixin.persistence.TicketMapper;
@@ -28,10 +31,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by Administrator on 2015/8/17.
@@ -112,6 +112,7 @@ public class WxApi implements IWxApi {
 
     /**
      * JS-SDK使用权限签名算法
+     *
      * @param url
      * @return
      * @throws WeixinException
@@ -305,8 +306,26 @@ public class WxApi implements IWxApi {
     @Override
     public Template send(TemplateMsg templateMsg) throws WeixinException {
         Token token = this.getToken();
-        String url = String.format(SEND_TEMPLATE_MSG_URL, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
+        String url = String.format(SEND_TEMPLATE_MSG_API_URL, token.getAccessToken()) + "&" + TOKEN_ID + token.getId();
         return http.httpPost(url, templateMsg, Template.class);
+    }
+
+    /**
+     * 自定义菜单
+     * 1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+     * 2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。
+     * 3、创建自定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。
+     *
+     * @param buttons   自定义菜单集合
+     * @return
+     */
+    @Override
+    public WxMsg customMenu(List<Button> buttons) throws WeixinException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("button",buttons);
+        Token token = this.getToken();
+        String url = String.format(CUSTOM_MENU_API_URL,token.getAccessToken());
+        return this.http.httpPost(url,jsonObject,WxMsg.class);
     }
 
     /**

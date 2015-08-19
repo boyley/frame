@@ -1,4 +1,4 @@
-package com.bogle.frame.weixin.message.menu;
+package com.bogle.frame.weixin.message;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.bogle.frame.weixin.defines.MenuType;

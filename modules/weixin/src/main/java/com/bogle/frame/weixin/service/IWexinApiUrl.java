@@ -68,5 +68,10 @@ public interface IWexinApiUrl {
      * 参数	是否必须	说明
      * access_token	是	基础的access_token
      */
-    String SEND_TEMPLATE_MSG_URL = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s";
+    String SEND_TEMPLATE_MSG_API_URL = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s";
+
+    /**
+     * 自定义菜单
+     */
+    String CUSTOM_MENU_API_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s";
 }
