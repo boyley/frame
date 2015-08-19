@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.sms.persistence.SignMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Sign" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="software_serial_no" property="softwareSerialNo" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="special_no" property="specialNo" jdbcType="VARCHAR" />
+    <result column="key" property="key" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="log_id" property="logId" jdbcType="BIGINT" />
+  </resultMap>
+
+  <resultMap id="AssociationResultMap" type="com.bogle.frame.sms.domain.Sign" extends="BaseResultMap">
+    <association property="log" javaType="com.bogle.frame.sms.domain.Log" columnPrefix="log_r_" resultMap="com.bogle.frame.sms.persistence.LogMapper.BaseResultMap"/>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, software_serial_no, pwd, special_no, `key`, create_time, log_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sms_sign
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectSelective" resultMap="AssociationResultMap" parameterType="com.bogle.frame.sms.domain.Sign" >
+    SELECT
+      sign.id,
+      sign.software_serial_no,
+      sign.pwd,
+      sign.special_no,
+      sign.`key`,
+      sign.create_time,
+      sign.log_id,
+      log.id log_r_id,
+      log.software_serial_no log_r_software_serial_no,
+      log.target log_r_target,
+      log.invoke log_r_invoke,
+      log.argus log_r_argus,
+      log.`code` log_r_code,
+      log.err_source log_r_err_source,
+      log.err_msg log_r_err_msg,
+      log.thing log_r_thing,
+      log.create_time log_r_create_time
+    FROM
+      sms_sign sign
+    JOIN sms_log log ON (sign.log_id = log.id)
+    WHERE
+      sign.id =
+    (
+      SELECT max(id) from sms_sign
+      WHERE software_serial_no=#{softwareSerialNo,jdbcType=VARCHAR}
+      and pwd = #{pwd,jdbcType=VARCHAR}
+      and `key`=#{key,jdbcType=VARCHAR}
+    )
+
+
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sms_sign
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.sms.domain.Sign" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_sign (software_serial_no, pwd, special_no, 
+      key, create_time, log_id
+      )
+    values (#{softwareSerialNo,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{specialNo,jdbcType=VARCHAR}, 
+      #{key,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{logId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Sign" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_sign
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="softwareSerialNo != null" >
+        software_serial_no,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="specialNo != null" >
+        special_no,
+      </if>
+      <if test="key != null" >
+        `key`,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="logId != null" >
+        log_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="softwareSerialNo != null" >
+        #{softwareSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="specialNo != null" >
+        #{specialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="key != null" >
+        #{key,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logId != null" >
+        #{logId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.sms.domain.Sign" >
+    update sms_sign
+    <set >
+      <if test="softwareSerialNo != null" >
+        software_serial_no = #{softwareSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="specialNo != null" >
+        special_no = #{specialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="key != null" >
+        key = #{key,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logId != null" >
+        log_id = #{logId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Sign" >
+    update sms_sign
+    set software_serial_no = #{softwareSerialNo,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      special_no = #{specialNo,jdbcType=VARCHAR},
+      key = #{key,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      log_id = #{logId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

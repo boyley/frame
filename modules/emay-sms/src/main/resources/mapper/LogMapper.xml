@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.sms.persistence.LogMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Log" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="software_serial_no" property="softwareSerialNo" jdbcType="VARCHAR" />
+    <result column="target" property="target" jdbcType="VARCHAR" />
+    <result column="invoke" property="invoke" jdbcType="VARCHAR" />
+    <result column="argus" property="argus" jdbcType="LONGVARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="err_source" property="errSource" jdbcType="VARCHAR" />
+    <result column="err_msg" property="errMsg" jdbcType="VARCHAR" />
+    <result column="thing" property="thing" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, software_serial_no, target, invoke, argus, code, err_source, err_msg, thing, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sms_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sms_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.sms.domain.Log" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_log (software_serial_no, target, invoke, 
+      argus, code, err_source, 
+      err_msg, thing, create_time
+      )
+    values (#{softwareSerialNo,jdbcType=VARCHAR}, #{target,jdbcType=VARCHAR}, #{invoke,jdbcType=VARCHAR}, 
+      #{argus,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{errSource,jdbcType=VARCHAR}, 
+      #{errMsg,jdbcType=VARCHAR}, #{thing,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Log" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="softwareSerialNo != null" >
+        software_serial_no,
+      </if>
+      <if test="target != null" >
+        target,
+      </if>
+      <if test="invoke != null" >
+        invoke,
+      </if>
+      <if test="argus != null" >
+        argus,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="errSource != null" >
+        err_source,
+      </if>
+      <if test="errMsg != null" >
+        err_msg,
+      </if>
+      <if test="thing != null" >
+        thing,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="softwareSerialNo != null" >
+        #{softwareSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="target != null" >
+        #{target,jdbcType=VARCHAR},
+      </if>
+      <if test="invoke != null" >
+        #{invoke,jdbcType=VARCHAR},
+      </if>
+      <if test="argus != null" >
+        #{argus,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="errSource != null" >
+        #{errSource,jdbcType=VARCHAR},
+      </if>
+      <if test="errMsg != null" >
+        #{errMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="thing != null" >
+        #{thing,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.sms.domain.Log" >
+    update sms_log
+    <set >
+      <if test="softwareSerialNo != null" >
+        software_serial_no = #{softwareSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="target != null" >
+        target = #{target,jdbcType=VARCHAR},
+      </if>
+      <if test="invoke != null" >
+        invoke = #{invoke,jdbcType=VARCHAR},
+      </if>
+      <if test="argus != null" >
+        argus = #{argus,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="errSource != null" >
+        err_source = #{errSource,jdbcType=VARCHAR},
+      </if>
+      <if test="errMsg != null" >
+        err_msg = #{errMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="thing != null" >
+        thing = #{thing,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Log" >
+    update sms_log
+    set software_serial_no = #{softwareSerialNo,jdbcType=VARCHAR},
+      target = #{target,jdbcType=VARCHAR},
+      invoke = #{invoke,jdbcType=VARCHAR},
+      argus = #{argus,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      err_source = #{errSource,jdbcType=VARCHAR},
+      err_msg = #{errMsg,jdbcType=VARCHAR},
+      thing = #{thing,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

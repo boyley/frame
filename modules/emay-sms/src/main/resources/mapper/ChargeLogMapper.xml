@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.sms.persistence.ChargeLogMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.ChargeLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cardNo" property="cardno" jdbcType="VARCHAR" />
+    <result column="card_pass" property="cardPass" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="log_id" property="logId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cardNo, card_pass, create_time, log_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sms_charge_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sms_charge_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.sms.domain.ChargeLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_charge_log (cardNo, card_pass, create_time, 
+      log_id)
+    values (#{cardno,jdbcType=VARCHAR}, #{cardPass,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{logId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.ChargeLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_charge_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cardno != null" >
+        cardNo,
+      </if>
+      <if test="cardPass != null" >
+        card_pass,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="logId != null" >
+        log_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cardno != null" >
+        #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPass != null" >
+        #{cardPass,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logId != null" >
+        #{logId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.sms.domain.ChargeLog" >
+    update sms_charge_log
+    <set >
+      <if test="cardno != null" >
+        cardNo = #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPass != null" >
+        card_pass = #{cardPass,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logId != null" >
+        log_id = #{logId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.ChargeLog" >
+    update sms_charge_log
+    set cardNo = #{cardno,jdbcType=VARCHAR},
+      card_pass = #{cardPass,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      log_id = #{logId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

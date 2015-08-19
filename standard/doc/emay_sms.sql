@@ -81,10 +81,10 @@ CREATE TABLE `sms_log` (
 -- ----------------------------
 -- Records of sms_log
 -- ----------------------------
-INSERT INTO `sms_log` VALUES ('74', '6SDK-EMY-6688-KKWQP', 'com.fenlibao.p2p.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.fenlibao.p2p.sms.service.impl.SmsApiImpl.registEx(java.lang.String)', '[\"439365\"]', '0', '服务器端', '成功', 'REGISTER_EX', '2015-08-19 11:50:20');
-INSERT INTO `sms_log` VALUES ('75', '6SDK-EMY-6688-KKWQP', 'com.fenlibao.p2p.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.fenlibao.p2p.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13751763759\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:52:02');
-INSERT INTO `sms_log` VALUES ('76', '6SDK-EMY-6688-KKWQP', 'com.fenlibao.p2p.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.fenlibao.p2p.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13822117771\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:52:58');
-INSERT INTO `sms_log` VALUES ('77', '6SDK-EMY-6688-KKWQP', 'com.fenlibao.p2p.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.fenlibao.p2p.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13660448298\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:53:51');
+INSERT INTO `sms_log` VALUES ('74', '6SDK-EMY-6688-KKWQP', 'com.bogle.frame.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.bogle.frame.sms.service.impl.SmsApiImpl.registEx(java.lang.String)', '[\"439365\"]', '0', '服务器端', '成功', 'REGISTER_EX', '2015-08-19 11:50:20');
+INSERT INTO `sms_log` VALUES ('75', '6SDK-EMY-6688-KKWQP', 'com.bogle.frame.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.bogle.frame.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13751763759\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:52:02');
+INSERT INTO `sms_log` VALUES ('76', '6SDK-EMY-6688-KKWQP', 'com.bogle.frame.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.bogle.frame.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13822117771\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:52:58');
+INSERT INTO `sms_log` VALUES ('77', '6SDK-EMY-6688-KKWQP', 'com.bogle.frame.sms.service.impl.SmsApiImpl', 'public java.io.Serializable com.bogle.frame.sms.service.impl.SmsApiImpl.sendSMS(java.lang.String[],java.lang.String,int)', '[[\"13660448298\"],\"【分利宝】header测试\",5]', '0', '服务器端', '成功', 'SEND_SMS', '2015-08-19 11:53:51');
 
 -- ----------------------------
 -- Table structure for sms_register_info

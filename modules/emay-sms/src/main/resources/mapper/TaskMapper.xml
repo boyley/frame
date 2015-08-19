@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.sms.persistence.TaskMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Task" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="send_status" property="sendStatus" jdbcType="VARCHAR" />
+    <result column="expire_time" property="expireTime" jdbcType="TIMESTAMP" />
+    <result column="sms_id" property="smsId" jdbcType="BIGINT" />
+    <result column="log_id" property="logId" jdbcType="BIGINT" />
+    <result column="mobiles" property="mobiles" jdbcType="LONGVARCHAR" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, create_time, send_status, expire_time, sms_id, log_id,mobiles, content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from sms_task
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sms_task
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.sms.domain.Task" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_task (create_time, send_status, expire_time,
+    sms_id, log_id, mobiles,
+    content)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{sendStatus,jdbcType=VARCHAR}, #{expireTime,jdbcType=TIMESTAMP},
+    #{smsId,jdbcType=BIGINT}, #{logId,jdbcType=BIGINT}, #{mobiles,jdbcType=LONGVARCHAR},
+    #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Task" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_task
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="sendStatus != null" >
+        send_status,
+      </if>
+      <if test="expireTime != null" >
+        expire_time,
+      </if>
+      <if test="smsId != null" >
+        sms_id,
+      </if>
+      <if test="logId != null" >
+        log_id,
+      </if>
+      <if test="mobiles != null" >
+        mobiles,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendStatus != null" >
+        #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smsId != null" >
+        #{smsId,jdbcType=BIGINT},
+      </if>
+      <if test="logId != null" >
+        #{logId,jdbcType=BIGINT},
+      </if>
+      <if test="mobiles != null" >
+        #{mobiles,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.sms.domain.Task" >
+    update sms_task
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendStatus != null" >
+        send_status = #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="expireTime != null" >
+        expire_time = #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smsId != null" >
+        sms_id = #{smsId,jdbcType=BIGINT},
+      </if>
+      <if test="logId != null" >
+        log_id = #{logId,jdbcType=BIGINT},
+      </if>
+      <if test="mobiles != null" >
+        mobiles = #{mobiles,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Task" >
+   update sms_task
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+    send_status = #{sendStatus,jdbcType=VARCHAR},
+    expire_time = #{expireTime,jdbcType=TIMESTAMP},
+    sms_id = #{smsId,jdbcType=BIGINT},
+    log_id = #{logId,jdbcType=BIGINT},
+    mobiles = #{mobiles,jdbcType=LONGVARCHAR},
+    content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

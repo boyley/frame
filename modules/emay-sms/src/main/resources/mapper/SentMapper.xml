@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bogle.frame.sms.persistence.SentMapper" >
+  <resultMap id="BaseResultMap" type="com.bogle.frame.sms.domain.Sent" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="sms_task_id" property="smsTaskId" jdbcType="BIGINT" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="sms_log_id" property="smsLogId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sms_task_id, send_time, sms_log_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sms_sent
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sms_sent
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bogle.frame.sms.domain.Sent" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_sent (sms_task_id, send_time, sms_log_id
+      )
+    values (#{smsTaskId,jdbcType=BIGINT}, #{sendTime,jdbcType=TIMESTAMP}, #{smsLogId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bogle.frame.sms.domain.Sent" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms_sent
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="smsTaskId != null" >
+        sms_task_id,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="smsLogId != null" >
+        sms_log_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="smsTaskId != null" >
+        #{smsTaskId,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smsLogId != null" >
+        #{smsLogId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bogle.frame.sms.domain.Sent" >
+    update sms_sent
+    <set >
+      <if test="smsTaskId != null" >
+        sms_task_id = #{smsTaskId,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smsLogId != null" >
+        sms_log_id = #{smsLogId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bogle.frame.sms.domain.Sent" >
+    update sms_sent
+    set sms_task_id = #{smsTaskId,jdbcType=BIGINT},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      sms_log_id = #{smsLogId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
