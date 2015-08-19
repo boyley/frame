@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/ChargeLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/ChargeLogMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/ChargeLogMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/defines/CodeMsg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/Log.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/LogMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/LogMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_emay_emayclient_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_1_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/message/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/RegisterInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/RegisterInfoMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/RegisterInfoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/variable/SendVariable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/Sent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/SentMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/SentMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/Sign.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/SignMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/SignMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/service/SmsApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/service/impl/SmsApiImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/config/SmsConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/sms/controller/SmsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/event/SmsInvokeEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/listener/SmsInvokeListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/interceptor/SmsLogInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/variable/SmsThing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/variable/SmsVariable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/domain/Task.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/persistence/TaskMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mapper/TaskMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/java/com/bogle/frame/sms/annotation/Thing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/db/migration/V4__add_sms_table.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/sms/config/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/config/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/emay-front/emay-front.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/emay-front/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/cms.iml" afterPath="$PROJECT_DIR$/standard/cms/cms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/common.iml" afterPath="$PROJECT_DIR$/common/common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/emay-sms/emay-sms.iml" afterPath="$PROJECT_DIR$/modules/emay-sms/emay-sms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/doc/emay_sms.sql" afterPath="$PROJECT_DIR$/standard/doc/emay_sms.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frame.iml" afterPath="$PROJECT_DIR$/frame.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/modules.iml" afterPath="$PROJECT_DIR$/modules/modules.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/emay-sms/pom.xml" afterPath="$PROJECT_DIR$/modules/emay-sms/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/pom.xml" afterPath="$PROJECT_DIR$/standard/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/cms/pom.xml" afterPath="$PROJECT_DIR$/standard/cms/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/weixin-console/pom.xml" afterPath="$PROJECT_DIR$/standard/weixin-console/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/standard.iml" afterPath="$PROJECT_DIR$/standard/standard.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/static-file/static-file.iml" afterPath="$PROJECT_DIR$/modules/static-file/static-file.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-admin/sys-admin.iml" afterPath="$PROJECT_DIR$/modules/sys-admin/sys-admin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-config/sys-config.iml" afterPath="$PROJECT_DIR$/modules/sys-config/sys-config.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/sys-web/sys-web.iml" afterPath="$PROJECT_DIR$/modules/sys-web/sys-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/weixin-console/weixin-console.iml" afterPath="$PROJECT_DIR$/standard/weixin-console/weixin-console.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/weixin/weixin.iml" afterPath="$PROJECT_DIR$/modules/weixin/weixin.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/doc/人民币网关自助接入.rar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/standard/doc/亿美软通SDK4.3.2(JAVA版)_状态报告平台.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="frame.iws" />
@@ -100,42 +40,7 @@
     <favorites_list name="frame" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/sms/config/WebConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmsController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/standard/emay-front/src/main/java/com/bogle/frame/sms/controller/SmsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38504463">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -349,147 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="emay-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emay-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emay-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emay-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emay-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -532,9 +297,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\project\idea\frame\standard\doc" />
       <recent name="E:\workspace\project\idea\frame\standard\emay-front\src\main" />
       <recent name="E:\workspace\project\idea\frame\modules\emay-sms\src\main\java\com\bogle\frame" />
-      <recent name="E:\workspace\project\idea\frame\standard\doc" />
       <recent name="E:\workspace\project\idea\frame\modules\static-file\src\main\resources" />
       <recent name="E:\workspace\project\idea\frame\standard\weixin-console\src\main\resources" />
     </key>
@@ -865,7 +630,7 @@
       <workItem from="1439958011623" duration="710000" />
       <workItem from="1439959569277" duration="1412000" />
       <workItem from="1439962348189" duration="383000" />
-      <workItem from="1439962890634" duration="3711000" />
+      <workItem from="1439962890634" duration="3946000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -1029,15 +794,21 @@
       <option name="project" value="LOCAL" />
       <updated>1439965213254</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="易美短信">
+      <created>1439967974034</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1439967974034</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135043000" />
+    <option name="totallyTimeSpent" value="135278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1050,7 +821,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4745946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36432433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1107,7 +878,8 @@
     <MESSAGE value="下一步，微信卡券签名算法" />
     <MESSAGE value="自定义微信菜单" />
     <MESSAGE value="微信jsapi签名完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="微信jsapi签名完成" />
+    <MESSAGE value="易美短信" />
+    <option name="LAST_COMMIT_MESSAGE" value="易美短信" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
