@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1fef1de-1a1e-4bcc-8d7d-dc8b2b4fe05a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/db/migration/V4__add_sms_table.sql" afterPath="$PROJECT_DIR$/modules/emay-sms/src/main/resources/db/migration/V4__add_sms_table.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/doc/数据库/数据库.pdb" afterPath="$PROJECT_DIR$/standard/doc/数据库/数据库.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standard/doc/数据库/数据库.pdm" afterPath="$PROJECT_DIR$/standard/doc/数据库/数据库.pdm" />
     </list>
     <ignored path="frame.iws" />
@@ -639,7 +637,7 @@
       <workItem from="1439958011623" duration="710000" />
       <workItem from="1439959569277" duration="1412000" />
       <workItem from="1439962348189" duration="383000" />
-      <workItem from="1439962890634" duration="14667000" />
+      <workItem from="1439962890634" duration="14732000" />
     </task>
     <task id="LOCAL-00001" summary="模板框架">
       <created>1439370700931</created>
@@ -833,11 +831,17 @@
       <option name="project" value="LOCAL" />
       <updated>1439979409001</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="将时间全部改为long">
+      <created>1439979725085</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1439979725085</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145999000" />
+    <option name="totallyTimeSpent" value="146064000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
