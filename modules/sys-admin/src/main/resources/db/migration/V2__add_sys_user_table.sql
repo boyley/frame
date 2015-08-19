@@ -113,7 +113,7 @@ CREATE TABLE `sys_user` (
   `account_non_locked` bit(1) DEFAULT NULL COMMENT '账号是否未被锁定',
   `credentials_non_expire` bit(1) DEFAULT NULL COMMENT '凭证是否为过期',
   `enabled` bit(1) DEFAULT NULL COMMENT '账号是否可用',
-  `register_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '注册日期',
+  `register_time` bigint DEFAULT NULL COMMENT '注册日期',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
 

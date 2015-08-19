@@ -9,7 +9,7 @@
     <result column="account_non_locked" property="accountNonLocked" jdbcType="BIT" />
     <result column="credentials_non_expire" property="credentialsNonExpire" jdbcType="BIT" />
     <result column="enabled" property="enabled" jdbcType="BIT" />
-    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+    <result column="register_time" property="registerTime" jdbcType="BIGINT" />
   </resultMap>
   <resultMap id="AssociationResultMap" type="com.bogle.frame.admin.domain.User" extends="BaseResultMap">
     <collection property="authorities" javaType="list" ofType="com.bogle.frame.admin.domain.Role" columnPrefix="role_" resultMap="com.bogle.frame.admin.persistence.RoleMapper.AssociationResultMap"/>

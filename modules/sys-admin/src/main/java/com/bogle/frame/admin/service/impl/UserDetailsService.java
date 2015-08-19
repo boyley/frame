@@ -88,12 +88,6 @@ public class UserDetailsService implements org.springframework.security.core.use
         return (UserDetails) principal;
     }
 
-//    public List<Regex> requestMap() {
-//        Map<RequestMatcher, Collection<ConfigAttribute>> requestMap = new HashMap<>();
-//        List<Regex> regexes = regexMapper.findAll();
-//        return regexes;
-//    }
-
     public Map<RequestMatcher, Collection<ConfigAttribute>> requestMap() {
         Map<RequestMatcher, Collection<ConfigAttribute>> requestMap = new HashMap<>();
         List<Regex> regexes = regexMapper.findAll();

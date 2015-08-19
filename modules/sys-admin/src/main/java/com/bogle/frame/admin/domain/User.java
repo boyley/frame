@@ -5,7 +5,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.List;
 
@@ -41,7 +40,9 @@ public class User implements UserDetails {
 
     private Boolean enabled = false;//账号是否可用
 
-    private Timestamp registerTime;
+    private Long registerTime;
+
+    private List<Menu> menus;
 
     /**
      * 获取改用户的权限信息
@@ -147,11 +148,11 @@ public class User implements UserDetails {
         this.authorities = authorities;
     }
 
-    public Timestamp getRegisterTime() {
+    public Long getRegisterTime() {
         return registerTime;
     }
 
-    public void setRegisterTime(Timestamp registerTime) {
+    public void setRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
     }
 
@@ -161,5 +162,13 @@ public class User implements UserDetails {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 }
